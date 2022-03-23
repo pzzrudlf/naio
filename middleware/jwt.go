@@ -1,13 +1,14 @@
 package middleware
 
 import (
-	"github.com/dgrijalva/jwt-go"
-	"github.com/gin-gonic/gin"
 	"naio/app/common/response"
 	"naio/app/services"
 	"naio/global"
 	"strconv"
 	"time"
+
+	"github.com/gin-gonic/gin"
+	"github.com/golang-jwt/jwt"
 )
 
 func JWTAuth(GuardName string) gin.HandlerFunc {
@@ -24,11 +25,6 @@ func JWTAuth(GuardName string) gin.HandlerFunc {
 		token, err := jwt.ParseWithClaims(tokenStr, &services.CustomClaims{}, func(token *jwt.Token) (interface{}, error) {
 			return []byte(global.App.Config.Jwt.Secret), nil
 		})
-		if err != nil {
-			response.TokenFail(c)
-			c.Abort()
-			return
-		}
 		if err != nil || services.JwtService.IsInBlacklist(tokenStr) { // 黑名单校验
 			response.TokenFail(c)
 			c.Abort()

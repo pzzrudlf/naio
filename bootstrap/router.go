@@ -56,8 +56,6 @@ func RunServer() {
         }
     }()
 
-    // r.Run(":" + global.App.Config.App.Port)
-
     // 等待中断信号以优雅地关闭服务器（设置 10 秒的超时时间）
     quit := make(chan os.Signal, 100000)
     signal.Notify(quit, syscall.SIGINT, syscall.SIGTERM)

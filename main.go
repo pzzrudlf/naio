@@ -11,7 +11,7 @@ func main() {
 
 	// 初始化日志
 	global.App.Log = bootstrap.InitializeLog()
-	global.App.Log.Info("log init success!")
+	// global.App.Log.Info("log init success!")
 
 	// 初始化数据库
 	global.App.DB = bootstrap.InitializeDB()
@@ -29,6 +29,12 @@ func main() {
 	// 初始化Redis
 	global.App.Redis = bootstrap.InitializeRedis()
 
+	// 初始化文件系统
+	bootstrap.InitializeStorage()
+
+	// 初始化计划任务
+	bootstrap.InitializeCron()
+	
 	// 启动服务器
 	bootstrap.RunServer()
 	// lsof -i tcp:8088

@@ -21,7 +21,7 @@ func InitializeConfig() *viper.Viper {
     v.SetConfigFile(config)
     v.SetConfigType("yaml")
     if err := v.ReadInConfig(); err != nil {
-        panic(fmt.Errorf("read config failed: %s", err))
+        panic(fmt.Errorf("read config failed: %s\n", err))
     }
 
     // 监听配置文件
@@ -40,4 +40,3 @@ func InitializeConfig() *viper.Viper {
 
     return v
 }
-

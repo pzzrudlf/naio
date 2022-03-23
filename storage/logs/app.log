@@ -1,0 +1,1 @@
+[2022-03-23 16:53:04.524]	local.error	bootstrap/redis.go:18	Redis connect ping failed, err:	{"err": "dial tcp 127.0.0.1:6379: connect: connection refused"}

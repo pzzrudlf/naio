@@ -112,4 +112,3 @@ func getGormLogWriter() logger.Writer {
     }
     return log.New(writer, "\r\n", log.LstdFlags)
 }
-

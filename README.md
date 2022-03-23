@@ -1,5 +1,5 @@
 # naio
 - gin
-- postgresql
+- mysql
 - casbin
 - gorm
