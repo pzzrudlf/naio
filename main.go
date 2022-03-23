@@ -39,4 +39,6 @@ func main() {
 	bootstrap.RunServer()
 	// lsof -i tcp:8088
 	// kill -9 PID
+
+	//使用command + c 退出进程
 }
