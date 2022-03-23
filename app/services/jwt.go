@@ -73,6 +73,9 @@ func (jwtService *jwtService) JoinBlackList(token *jwt.Token) (err error) {
 // IsInBlacklist token 是否在黑名单中
 func (jwtService *jwtService) IsInBlacklist(tokenStr string) bool {
 	joinUnixStr, err := global.App.Redis.Get(context.Background(), jwtService.getBlackListKey(tokenStr)).Result()
+	if err != nil {
+		return false
+	}
 	joinUnix, err := strconv.ParseInt(joinUnixStr, 10, 64)
 	if joinUnixStr == "" || err != nil {
 		return false

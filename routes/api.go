@@ -1,14 +1,10 @@
 package routes
 
 import (
-	_ "naio/app/common/request"
+	"naio/app/controllers/app"
+	"naio/app/controllers/common"
 	"naio/app/services"
 	"naio/middleware"
-	"naio/app/controllers/common"
-	_ "net/http"
-	_ "time"
-
-	"naio/app/controllers/app"
 
 	"github.com/gin-gonic/gin"
 )
