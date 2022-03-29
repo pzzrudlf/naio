@@ -19,7 +19,7 @@ database:
   driver: 'mysql' # 数据库驱动
   host: '127.0.0.1' # 域名
   port: 3306 # 端口号
-  database: 'test' # 数据库名称
+  database: 'naio' # 数据库名称
   username: 'root' # 用户名
   password: 'pzzrudlf' # 密码
   charset: utf8mb4 # 编码格式
@@ -32,7 +32,7 @@ database:
 redis:
   host: '127.0.0.1'
   port: 6379
-  db: 0
+  db: 1
   password: ''
 
 jwt:
