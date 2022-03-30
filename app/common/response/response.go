@@ -63,6 +63,17 @@ func BusinessFail(c *gin.Context, msg string) {
 	Fail(c, global.Errors.BusinessError.ErrorCode, msg)
 }
 
+// TokenFail 令牌失败 
 func TokenFail(c *gin.Context) {
 	FailByError(c, global.Errors.TokenError)
+}
+
+// PermissionFail 权限失败
+func PermissionFail(c *gin.Context, msg string) {
+	Fail(c, global.Errors.PermissionError.ErrorCode, msg)
+}
+
+// CasbinFail casbin失败
+func CasbinFail(c *gin.Context, msg string) {
+	Fail(c, global.Errors.CasbinError.ErrorCode, msg)
 }

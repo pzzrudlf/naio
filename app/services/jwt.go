@@ -96,3 +96,7 @@ func (jwtService *jwtService) GetUserInfo(GuardName string, id string) (user Jwt
 	}
 	return
 }
+
+func (jwtService *jwtService) GetIdFromClaims(key string, claims jwt.Claims) string {
+	return ""
+}

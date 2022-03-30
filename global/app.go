@@ -2,6 +2,8 @@ package global
 
 import (
 	"naio/config"
+
+	"github.com/casbin/casbin/v2"
 	"github.com/jassue/go-storage/storage"
 
 	"github.com/go-redis/redis/v8"
@@ -16,6 +18,7 @@ type Application struct {
 	Config      config.Configuration
 	Log         *zap.Logger
 	DB          *gorm.DB
+	Casbin      *casbin.Enforcer
 	Redis       *redis.Client
 	Cron        *cron.Cron
 }

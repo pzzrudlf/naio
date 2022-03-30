@@ -14,10 +14,13 @@ func SetApiGroupRoutes(router *gin.RouterGroup) {
 	router.POST("/auth/register", app.Register)
 	router.POST("/auth/login", app.Login)
 
-	authRouter := router.Group("").Use(middleware.JWTAuth(services.AppGuardName))
+	// 单条路由设置中间件
+	router.POST("/auth/info", app.Info).Use(middleware.JWTAuth(services.AppGuardName))
+	router.POST("/auth/logout", app.Logout).Use(middleware.JWTAuth(services.AppGuardName))
+
+	// 路由分组
+	authRouter := router.Group("").Use(middleware.JWTAuth(services.AppGuardName)).Use(middleware.CheckPermission())
 	{
-		authRouter.POST("/auth/info", app.Info)
-		authRouter.POST("/auth/logout", app.Logout)
 		authRouter.POST("/image_upload", common.ImageUpload)
 	}
 }

@@ -22,6 +22,9 @@ func main() {
 		}
 	}()
 
+	// 初始化casbin
+	bootstrap.InitializeCasbin(global.App.DB)
+
 	// 初始化验证器
 	bootstrap.InitializeValidator()
 
@@ -40,4 +43,5 @@ func main() {
 	// kill -9 PID
 
 	//使用command + c 退出进程
+
 }

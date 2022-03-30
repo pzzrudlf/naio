@@ -13,11 +13,12 @@ func setupRouter() *gin.Engine {
     }
 
     router := gin.New()
-    router.Use(gin.Logger(), middleware.CustomRecovery())
-
+    router.Use(gin.Logger())
     // 跨域处理
     router.Use(middleware.Cors())
-
+    //
+    router.Use(middleware.CustomRecovery())
+    
     // 前端项目静态资源
     router.StaticFile("/", "./static/dist/index.html")
     router.Static("/assets", "./static/dist/assets")
