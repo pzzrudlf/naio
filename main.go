@@ -23,7 +23,7 @@ func main() {
 	}()
 
 	// 初始化casbin
-	bootstrap.InitializeCasbin(global.App.DB)
+	global.App.Casbin = bootstrap.InitializeCasbin()
 
 	// 初始化验证器
 	bootstrap.InitializeValidator()
