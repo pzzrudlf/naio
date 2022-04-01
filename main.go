@@ -22,7 +22,6 @@ func main() {
 		}
 	}()
 
-	// 初始化casbin
 	global.App.Casbin = bootstrap.InitializeCasbin()
 
 	// 初始化验证器
@@ -37,6 +36,7 @@ func main() {
 	// 初始化计划任务
 	bootstrap.InitializeCron()
 
+	//fmt.Println(global.App)
 	// 启动服务器
 	bootstrap.RunServer()
 	// lsof -i tcp:8088

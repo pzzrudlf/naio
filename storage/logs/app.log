@@ -1,0 +1,246 @@
+
+
+[31m2022/04/01 09:27:00 [Recovery] 2022/04/01 - 09:27:00 panic recovered:
+POST /api/auth/info HTTP/1.1
+Host: localhost:8088
+Accept: */*
+Accept-Encoding: gzip, deflate, br
+Authorization: *
+Cache-Control: no-cache
+Connection: keep-alive
+Content-Length: 0
+Postman-Token: 5105eb57-e194-4e6d-8b5d-a0208e71718d
+User-Agent: PostmanRuntime/7.29.0
+
+
+interface conversion: interface {} is nil, not string
+/usr/local/go/src/runtime/iface.go:261 (0x100b9f4)
+	panicdottypeE: panic(&TypeAssertionError{iface, have, want, ""})
+/Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/app/controllers/app/auth.go:51 (0x1848c52)
+	Info: user, err := services.UserService.GetUserInfo(c.Keys["id"].(string))
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/context.go:168 (0x1831481)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/recovery.go:99 (0x183146c)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/context.go:168 (0x18306e6)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/logger.go:241 (0x18306c9)
+	LoggerWithConfig.func1: c.Next()
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/context.go:168 (0x182fc30)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/gin.go:555 (0x182f898)
+	(*Engine).handleHTTPRequest: c.Next()
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/gin.go:511 (0x182f3d1)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+/usr/local/go/src/net/http/server.go:2878 (0x12a1eda)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+/usr/local/go/src/net/http/server.go:1929 (0x129d587)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+/usr/local/go/src/runtime/asm_amd64.s:1581 (0x1065e80)
+	goexit: BYTE	$0x90	// NOP
+[0m
+
+
+[31m2022/04/01 09:29:46 [Recovery] 2022/04/01 - 09:29:46 panic recovered:
+POST /api/auth/info HTTP/1.1
+Host: localhost:8088
+Accept: */*
+Accept-Encoding: gzip, deflate, br
+Authorization: *
+Cache-Control: no-cache
+Connection: keep-alive
+Content-Length: 0
+Postman-Token: fd3cd150-25d0-47db-8ce2-67f27f32882f
+User-Agent: PostmanRuntime/7.29.0
+
+
+interface conversion: interface {} is nil, not string
+/usr/local/go/src/runtime/iface.go:261 (0x100b9f4)
+	panicdottypeE: panic(&TypeAssertionError{iface, have, want, ""})
+/Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/app/controllers/app/auth.go:51 (0x1848c52)
+	Info: user, err := services.UserService.GetUserInfo(c.Keys["id"].(string))
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/context.go:168 (0x1831481)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/recovery.go:99 (0x183146c)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/context.go:168 (0x18306e6)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/logger.go:241 (0x18306c9)
+	LoggerWithConfig.func1: c.Next()
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/context.go:168 (0x182fc30)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/gin.go:555 (0x182f898)
+	(*Engine).handleHTTPRequest: c.Next()
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/gin.go:511 (0x182f3d1)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+/usr/local/go/src/net/http/server.go:2878 (0x12a1eda)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+/usr/local/go/src/net/http/server.go:1929 (0x129d587)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+/usr/local/go/src/runtime/asm_amd64.s:1581 (0x1065e80)
+	goexit: BYTE	$0x90	// NOP
+[0m
+
+
+[31m2022/04/01 09:30:00 [Recovery] 2022/04/01 - 09:30:00 panic recovered:
+POST /api/auth/info HTTP/1.1
+Host: localhost:8088
+Accept: */*
+Accept-Encoding: gzip, deflate, br
+Authorization: *
+Cache-Control: no-cache
+Connection: keep-alive
+Content-Length: 0
+Postman-Token: 22ad8f2e-9310-4be9-b334-77a02b3e0da5
+User-Agent: PostmanRuntime/7.29.0
+
+
+interface conversion: interface {} is nil, not string
+/usr/local/go/src/runtime/iface.go:261 (0x100b9f4)
+	panicdottypeE: panic(&TypeAssertionError{iface, have, want, ""})
+/Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/app/controllers/app/auth.go:51 (0x1848c52)
+	Info: user, err := services.UserService.GetUserInfo(c.Keys["id"].(string))
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/context.go:168 (0x1831481)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/recovery.go:99 (0x183146c)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/context.go:168 (0x18306e6)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/logger.go:241 (0x18306c9)
+	LoggerWithConfig.func1: c.Next()
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/context.go:168 (0x182fc30)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/gin.go:555 (0x182f898)
+	(*Engine).handleHTTPRequest: c.Next()
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/gin.go:511 (0x182f3d1)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+/usr/local/go/src/net/http/server.go:2878 (0x12a1eda)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+/usr/local/go/src/net/http/server.go:1929 (0x129d587)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+/usr/local/go/src/runtime/asm_amd64.s:1581 (0x1065e80)
+	goexit: BYTE	$0x90	// NOP
+[0m
+
+
+[31m2022/04/01 09:30:56 [Recovery] 2022/04/01 - 09:30:56 panic recovered:
+POST /api/auth/info HTTP/1.1
+Host: localhost:8088
+Accept: */*
+Accept-Encoding: gzip, deflate, br
+Authorization: *
+Cache-Control: no-cache
+Connection: keep-alive
+Content-Length: 0
+Postman-Token: 7666c5b6-5e04-4d9d-a2be-72b606be64ee
+User-Agent: PostmanRuntime/7.29.0
+
+
+interface conversion: interface {} is nil, not string
+/usr/local/go/src/runtime/iface.go:261 (0x100b9f4)
+	panicdottypeE: panic(&TypeAssertionError{iface, have, want, ""})
+/Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/app/controllers/app/auth.go:51 (0x1848c52)
+	Info: user, err := services.UserService.GetUserInfo(c.Keys["id"].(string))
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/context.go:168 (0x1831481)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/recovery.go:99 (0x183146c)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/context.go:168 (0x18306e6)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/logger.go:241 (0x18306c9)
+	LoggerWithConfig.func1: c.Next()
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/context.go:168 (0x182fc30)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/gin.go:555 (0x182f898)
+	(*Engine).handleHTTPRequest: c.Next()
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/gin.go:511 (0x182f3d1)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+/usr/local/go/src/net/http/server.go:2878 (0x12a1eda)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+/usr/local/go/src/net/http/server.go:1929 (0x129d587)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+/usr/local/go/src/runtime/asm_amd64.s:1581 (0x1065e80)
+	goexit: BYTE	$0x90	// NOP
+[0m
+
+
+[31m2022/04/01 09:34:25 [Recovery] 2022/04/01 - 09:34:25 panic recovered:
+POST /api/auth/logout HTTP/1.1
+Host: localhost:8088
+Accept: */*
+Accept-Encoding: gzip, deflate, br
+Authorization: *
+Cache-Control: no-cache
+Connection: keep-alive
+Content-Length: 0
+Postman-Token: f49bfc8c-2724-4fce-ab57-ba7da294d083
+User-Agent: PostmanRuntime/7.29.0
+
+
+interface conversion: interface {} is nil, not *jwt.Token
+/usr/local/go/src/runtime/iface.go:261 (0x100b9f4)
+	panicdottypeE: panic(&TypeAssertionError{iface, have, want, ""})
+/Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/app/controllers/app/auth.go:60 (0x1848d98)
+	Logout: err := services.JwtService.JoinBlackList(c.Keys["token"].(*jwt.Token))
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/context.go:168 (0x1831481)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/recovery.go:99 (0x183146c)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/context.go:168 (0x18306e6)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/logger.go:241 (0x18306c9)
+	LoggerWithConfig.func1: c.Next()
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/context.go:168 (0x182fc30)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/gin.go:555 (0x182f898)
+	(*Engine).handleHTTPRequest: c.Next()
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/gin.go:511 (0x182f3d1)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+/usr/local/go/src/net/http/server.go:2878 (0x12a1eda)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+/usr/local/go/src/net/http/server.go:1929 (0x129d587)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+/usr/local/go/src/runtime/asm_amd64.s:1581 (0x1065e80)
+	goexit: BYTE	$0x90	// NOP
+[0m
+
+
+[31m2022/04/01 09:35:10 [Recovery] 2022/04/01 - 09:35:10 panic recovered:
+POST /api/auth/logout HTTP/1.1
+Host: localhost:8088
+Accept: */*
+Accept-Encoding: gzip, deflate, br
+Authorization: *
+Cache-Control: no-cache
+Connection: keep-alive
+Content-Length: 0
+Postman-Token: 2e9c2187-b6e7-4f00-a6db-c6a72d544c56
+User-Agent: PostmanRuntime/7.29.0
+
+
+interface conversion: interface {} is nil, not *jwt.Token
+/usr/local/go/src/runtime/iface.go:261 (0x100b9f4)
+	panicdottypeE: panic(&TypeAssertionError{iface, have, want, ""})
+/Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/app/controllers/app/auth.go:60 (0x1848d98)
+	Logout: err := services.JwtService.JoinBlackList(c.Keys["token"].(*jwt.Token))
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/context.go:168 (0x1831481)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/recovery.go:99 (0x183146c)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/context.go:168 (0x18306e6)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/logger.go:241 (0x18306c9)
+	LoggerWithConfig.func1: c.Next()
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/context.go:168 (0x182fc30)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/gin.go:555 (0x182f898)
+	(*Engine).handleHTTPRequest: c.Next()
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/gin.go:511 (0x182f3d1)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+/usr/local/go/src/net/http/server.go:2878 (0x12a1eda)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+/usr/local/go/src/net/http/server.go:1929 (0x129d587)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+/usr/local/go/src/runtime/asm_amd64.s:1581 (0x1065e80)
+	goexit: BYTE	$0x90	// NOP
+[0m

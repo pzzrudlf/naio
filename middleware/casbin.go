@@ -1,18 +1,17 @@
 package middleware
 
 import (
+	"github.com/gin-gonic/gin"
+	"github.com/golang-jwt/jwt"
 	"naio/app/common/response"
 	"naio/app/services"
 	"naio/global"
-	"github.com/gin-gonic/gin"
-	"github.com/golang-jwt/jwt"
-
 )
 
-func CheckPermission() gin.HandlerFunc {
+func CheckCasbinPermission() gin.HandlerFunc {
 	return func(c *gin.Context) {
 
-		// 
+		//
 		tokenStr := c.Request.Header.Get("Authorization")
 		if tokenStr == "" {
 			response.TokenFail(c)
