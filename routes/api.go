@@ -22,10 +22,13 @@ func SetApiGroupRoutes(router *gin.RouterGroup) {
 	jwtRouter := router.Group("").Use(middleware.JWTAuth(services.AppGuardName))
 	{
 		jwtRouter.POST("/auth/logout", app.Logout)
-		casbinRouter := jwtRouter.Group("").Use(middleware.CheckCasbinPermission())
-		{
-			casbinRouter.POST("/auth/info", app.Info)
-			casbinRouter.POST("/image_upload", common.ImageUpload)
-		}
+		jwtRouter.POST("/auth/info", app.Info)
+		jwtRouter.POST("/image_upload", common.ImageUpload)
+
+		//casbinRouter := jwtRouter.Group("").Use(middleware.CheckCasbinPermission())
+		//{
+		//	casbinRouter.POST("/auth/info", app.Info)
+		//	casbinRouter.POST("/image_upload", common.ImageUpload)
+		//}
 	}
 }
