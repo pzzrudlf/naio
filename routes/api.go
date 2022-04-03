@@ -15,20 +15,14 @@ func SetApiGroupRoutes(router *gin.RouterGroup) {
 	router.POST("/auth/login", app.Login)
 
 	// 单条路由设置中间件
-	//router.POST("/auth/info", app.Info).Use(middleware.JWTAuth(services.AppGuardName))
+	//router.POST("/auth/info", middleware.JWTAuth(services.AppGuardName), app.Info)
 	//router.POST("/auth/logout", app.Logout).Use(middleware.JWTAuth(services.AppGuardName))
 
 	// 路由分组
 	jwtRouter := router.Group("").Use(middleware.JWTAuth(services.AppGuardName))
 	{
 		jwtRouter.POST("/auth/logout", app.Logout)
-		jwtRouter.POST("/auth/info", app.Info)
-		jwtRouter.POST("/image_upload", common.ImageUpload)
-
-		//casbinRouter := jwtRouter.Group("").Use(middleware.CheckCasbinPermission())
-		//{
-		//	casbinRouter.POST("/auth/info", app.Info)
-		//	casbinRouter.POST("/image_upload", common.ImageUpload)
-		//}
+		jwtRouter.POST("/auth/info", middleware.CheckPermission(), app.Info)
+		jwtRouter.POST("/image_upload", middleware.CheckPermission(), common.ImageUpload)
 	}
 }

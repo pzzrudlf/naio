@@ -8,7 +8,7 @@ import (
 	"naio/global"
 )
 
-func CheckCasbinPermission() gin.HandlerFunc {
+func CheckPermission() gin.HandlerFunc {
 	return func(c *gin.Context) {
 
 		//
