@@ -244,3 +244,4 @@ interface conversion: interface {} is nil, not *jwt.Token
 /usr/local/go/src/runtime/asm_amd64.s:1581 (0x1065e80)
 	goexit: BYTE	$0x90	// NOP
 [0m
+[2022-04-10 16:34:12.015]	local.error	bootstrap/database.go:49	mysql connect failed, err:	{"err": "Error 1049: Unknown database 'naio'"}

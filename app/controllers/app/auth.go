@@ -16,7 +16,7 @@ func Register(c *gin.Context) {
 		return
 	}
 
-	if err, user := services.UserService.Register(form); err != nil {
+	if user, err := services.UserService.Register(form); err != nil {
 		response.BusinessFail(c, err.Error())
 	} else {
 		tokenData, err, _ := services.JwtService.CreateToken(services.AppGuardName, user)

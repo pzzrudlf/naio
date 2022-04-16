@@ -6,7 +6,7 @@ type Register struct {
 	Password string `form:"password" json:"password" binding:"required"`
 }
 
-// 自定义错误信息
+// GetMessages 自定义错误信息
 func (register Register) GetMessages() ValidatorMessages {
 	return ValidatorMessages{
 		"name.required":     "用户名称不能为空",
