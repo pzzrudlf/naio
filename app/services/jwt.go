@@ -3,9 +3,11 @@ package services
 import (
 	"context"
 	"errors"
+	"fmt"
 	"github.com/golang-jwt/jwt"
 	"naio/global"
 	"naio/utils"
+	"reflect"
 	"strconv"
 	"time"
 )
@@ -17,9 +19,11 @@ var JwtService = new(jwtService)
 
 type JwtUser interface {
 	GetUid() string
+	GetName() string
 }
 
 type CustomClaims struct {
+	Username string `json:"username"`
 	jwt.StandardClaims
 }
 
@@ -38,6 +42,7 @@ func (jwtService *jwtService) CreateToken(GuardName string, user JwtUser) (token
 	token = jwt.NewWithClaims(
 		jwt.SigningMethodHS256,
 		CustomClaims{
+			Username: user.GetName(),
 			StandardClaims: jwt.StandardClaims{
 				ExpiresAt: time.Now().Unix() + global.App.Config.Jwt.JwtTtl,
 				Id:        user.GetUid(),
@@ -97,6 +102,16 @@ func (jwtService *jwtService) GetUserInfo(GuardName string, id string) (user Jwt
 	return
 }
 
-func (jwtService *jwtService) GetIdFromClaims(key string, claims jwt.Claims) string {
+// GetUsernameFromClaims casbin中间件验证权限的时候要用到后台用户的名字，此处是从claims中获取管理员的名字
+func (jwtService *jwtService) GetUsernameFromClaims(key string, claims jwt.Claims) string {
+	v := reflect.ValueOf(claims)
+	if v.Kind() == reflect.Map {
+		for _, k := range v.MapKeys() {
+			value := v.MapIndex(k)
+			if fmt.Sprintf("%s", k.Interface()) == key {
+				return fmt.Sprintf("%v", value.Interface())
+			}
+		}
+	}
 	return ""
 }

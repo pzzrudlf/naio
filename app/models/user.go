@@ -14,3 +14,7 @@ type User struct {
 func (user User) GetUid() string {
 	return strconv.Itoa(int(user.ID.ID))
 }
+
+func (user User) GetName() string {
+	return user.Name
+}
