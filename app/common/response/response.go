@@ -11,7 +11,7 @@ import (
 type Response struct {
 	ErrorCode int         `json:"error_code"` // 自定义错误码
 	Data      interface{} `json:"data"`       // 数据
-	Message   string      `json:"message"`    // 信息
+	Message   string      `json:"msg"`        // 信息
 }
 
 func ServerError(c *gin.Context, err interface{}) {

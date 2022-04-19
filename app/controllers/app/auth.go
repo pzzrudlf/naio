@@ -1,12 +1,11 @@
 package app
 
 import (
+	"github.com/gin-gonic/gin"
+	"github.com/golang-jwt/jwt"
 	"naio/app/common/request"
 	"naio/app/common/response"
 	"naio/app/services"
-
-	"github.com/gin-gonic/gin"
-	"github.com/golang-jwt/jwt"
 )
 
 func Register(c *gin.Context) {
