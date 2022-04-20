@@ -757,3 +757,69 @@
 
 2022/04/20 08:42:42 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/app/services/user.go:31
 [17.917ms] [rows:1] SELECT * FROM `user` WHERE mobile = '18511013819' AND `user`.`deleted_at` IS NULL ORDER BY `user`.`id` LIMIT 1
+
+2022/04/20 11:50:43 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:234
+[0.208ms] [rows:-] SELECT DATABASE()
+
+2022/04/20 11:50:43 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:237
+[1.507ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'naio%' ORDER BY SCHEMA_NAME='naio' DESC limit 1
+
+2022/04/20 11:50:43 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/bootstrap/database.go:66
+[1.373ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'naio' AND table_name = 'user' AND table_type = 'BASE TABLE'
+
+2022/04/20 11:50:43 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/bootstrap/database.go:66
+[13.799ms] [rows:0] CREATE TABLE `user` (`id` bigint unsigned AUTO_INCREMENT,`username` varchar(30) NOT NULL COMMENT '用户名称',`password` varchar(191) NOT NULL DEFAULT '' COMMENT '用户密码',`created_at` datetime NULL,`updated_at` datetime NULL,`deleted_at` datetime NULL,PRIMARY KEY (`id`),INDEX idx_user_deleted_at (`deleted_at`))
+
+2022/04/20 11:50:43 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:234
+[0.171ms] [rows:-] SELECT DATABASE()
+
+2022/04/20 11:50:43 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:237
+[0.817ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'naio%' ORDER BY SCHEMA_NAME='naio' DESC limit 1
+
+2022/04/20 11:50:43 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/bootstrap/database.go:66
+[1.218ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'naio' AND table_name = 'menu' AND table_type = 'BASE TABLE'
+
+2022/04/20 11:50:43 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/bootstrap/database.go:66
+[9.838ms] [rows:0] CREATE TABLE `menu` (`id` bigint unsigned AUTO_INCREMENT,`name` varchar(30) NOT NULL COMMENT '菜单名称',`pid` bigint COMMENT '父级菜单id',`path` varchar(191) COMMENT '菜单路径',`created_at` datetime NULL,`updated_at` datetime NULL,`deleted_at` datetime NULL,PRIMARY KEY (`id`),INDEX idx_menu_deleted_at (`deleted_at`))
+
+2022/04/20 11:53:11 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/app/services/user.go:19 record not found
+[1.593ms] [rows:0] SELECT `id` FROM `user` WHERE username = 'admin' AND `user`.`deleted_at` IS NULL ORDER BY `user`.`id` LIMIT 1
+
+2022/04/20 11:53:11 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/app/services/user.go:25
+[2.791ms] [rows:1] INSERT INTO `user` (`username`,`password`,`created_at`,`updated_at`,`deleted_at`) VALUES ('admin','$2a$04$e71j9VmmLIqiwY076Q/pBO9hoa6nMsolQmQ/qh8hTELASmlpuTsOW','2022-04-20 11:53:11.13','2022-04-20 11:53:11.13',NULL)
+
+2022/04/20 11:53:51 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/app/services/user.go:31
+[1.518ms] [rows:1] SELECT * FROM `user` WHERE username = 'admin' AND `user`.`deleted_at` IS NULL ORDER BY `user`.`id` LIMIT 1
+
+2022/04/20 11:53:59 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/app/services/user.go:31
+[1.293ms] [rows:1] SELECT * FROM `user` WHERE username = 'admin' AND `user`.`deleted_at` IS NULL ORDER BY `user`.`id` LIMIT 1
+
+2022/04/20 11:54:03 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/app/services/user.go:31
+[0.628ms] [rows:1] SELECT * FROM `user` WHERE username = 'admin' AND `user`.`deleted_at` IS NULL ORDER BY `user`.`id` LIMIT 1
+
+2022/04/20 11:54:31 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/app/services/user.go:31
+[3.002ms] [rows:1] SELECT * FROM `user` WHERE username = 'admin' AND `user`.`deleted_at` IS NULL ORDER BY `user`.`id` LIMIT 1
+
+2022/04/20 11:56:06 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/app/services/user.go:19 record not found
+[1.081ms] [rows:0] SELECT `id` FROM `user` WHERE username = 'admin' AND `user`.`deleted_at` IS NULL ORDER BY `user`.`id` LIMIT 1
+
+2022/04/20 11:56:06 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/app/services/user.go:25
+[5.229ms] [rows:1] INSERT INTO `user` (`username`,`password`,`created_at`,`updated_at`,`deleted_at`) VALUES ('admin','$2a$04$jQmNRGi69AKw/FUwU4a6A.EC1SG8wyJTJTz3uBLsa6toMJji3TX7C','2022-04-20 11:56:06.391','2022-04-20 11:56:06.391',NULL)
+
+2022/04/20 11:57:24 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/app/services/user.go:41
+[0.888ms] [rows:1] SELECT * FROM `user` WHERE `user`.`id` = 1 AND `user`.`deleted_at` IS NULL ORDER BY `user`.`id` LIMIT 1
+
+2022/04/20 11:57:31 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/app/services/user.go:41
+[0.864ms] [rows:1] SELECT * FROM `user` WHERE `user`.`id` = 1 AND `user`.`deleted_at` IS NULL ORDER BY `user`.`id` LIMIT 1
+
+2022/04/20 11:57:32 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/app/services/user.go:41
+[1.724ms] [rows:1] SELECT * FROM `user` WHERE `user`.`id` = 1 AND `user`.`deleted_at` IS NULL ORDER BY `user`.`id` LIMIT 1
+
+2022/04/20 11:57:33 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/app/services/user.go:41
+[0.809ms] [rows:1] SELECT * FROM `user` WHERE `user`.`id` = 1 AND `user`.`deleted_at` IS NULL ORDER BY `user`.`id` LIMIT 1
+
+2022/04/20 11:57:34 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/app/services/user.go:41
+[2.097ms] [rows:1] SELECT * FROM `user` WHERE `user`.`id` = 1 AND `user`.`deleted_at` IS NULL ORDER BY `user`.`id` LIMIT 1
+
+2022/04/20 11:57:41 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/app/services/user.go:41
+[0.603ms] [rows:1] SELECT * FROM `user` WHERE `user`.`id` = 1 AND `user`.`deleted_at` IS NULL ORDER BY `user`.`id` LIMIT 1
