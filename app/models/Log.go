@@ -1,6 +1,7 @@
 package models
 
-type Menu struct {
+type Log struct {
 	ID
+
 	Timestamps
 }

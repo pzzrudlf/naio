@@ -1,6 +1,6 @@
 package models
 
-type Menu struct {
+type Dept struct {
 	ID
 	Timestamps
 }

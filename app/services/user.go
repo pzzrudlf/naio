@@ -36,8 +36,12 @@ func (userService *userService) Login(params request.Login) (user *models.User, 
 }
 
 // GetUserInfo 获取用户信息
-func (userService *userService) GetUserInfo(id string) (user models.User, err error) {
-	intId, _ := strconv.Atoi(id)
+func (userService *userService) GetUserInfo(userid string) (user models.User, err error) {
+	intId, _ := strconv.Atoi(userid)
+	var permissions []models.Permission
+
+	global.App.DB.Raw("select * from sys_permission where id in (select permission_id from sys_role_permission where role_id = (select role_id from sys_user_role where user_id = ?))", intId).Scan(&permissions)
+
 	err = global.App.DB.First(&user, intId).Error
 	if err != nil {
 		err = errors.New("数据不存在")

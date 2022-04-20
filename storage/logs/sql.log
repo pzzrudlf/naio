@@ -946,3 +946,144 @@
 
 2022/04/20 12:12:01 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/bootstrap/database.go:66
 [1.038ms] [rows:-] SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'naio' AND table_name = 'menu' AND index_name = 'idx_menu_deleted_at'
+
+2022/04/20 13:46:06 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:234
+[1.020ms] [rows:-] SELECT DATABASE()
+
+2022/04/20 13:46:06 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:237
+[12.394ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'naio%' ORDER BY SCHEMA_NAME='naio' DESC limit 1
+
+2022/04/20 13:46:06 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/bootstrap/database.go:66
+[6.333ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'naio' AND table_name = 'user' AND table_type = 'BASE TABLE'
+
+2022/04/20 13:46:06 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:234
+[0.218ms] [rows:-] SELECT DATABASE()
+
+2022/04/20 13:46:06 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:237
+[1.313ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'naio%' ORDER BY SCHEMA_NAME='naio' DESC limit 1
+
+2022/04/20 13:46:06 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:205
+[3.484ms] [rows:-] SELECT column_name, is_nullable, data_type, character_maximum_length, numeric_precision, numeric_scale FROM information_schema.columns WHERE table_schema = 'naio' AND table_name = 'user' ORDER BY ORDINAL_POSITION
+
+2022/04/20 13:46:06 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/bootstrap/database.go:66
+[61.273ms] [rows:0] ALTER TABLE `user` ADD `is_account_non_expired` tinyint DEFAULT 1 COMMENT '账户是否过期(1未过期,0已过期)'
+
+2022/04/20 13:46:06 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/bootstrap/database.go:66
+[12.735ms] [rows:0] ALTER TABLE `user` ADD `is_account_non_locked` tinyint DEFAULT 1 COMMENT '账户是否被锁定(1未锁定,0已锁定)'
+
+2022/04/20 13:46:06 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/bootstrap/database.go:66
+[12.315ms] [rows:0] ALTER TABLE `user` ADD `is_credentials_non_expired` tinyint DEFAULT 1 COMMENT '密码是否过期(1未过期,0已过期)'
+
+2022/04/20 13:46:06 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/bootstrap/database.go:66
+[11.783ms] [rows:0] ALTER TABLE `user` ADD `is_enabled` tinyint DEFAULT 1 COMMENT '账户是否可用(1可用,0删除用户)'
+
+2022/04/20 13:46:06 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/bootstrap/database.go:66
+[16.248ms] [rows:0] ALTER TABLE `user` ADD `nick_name` varchar(64) DEFAULT null COMMENT '昵称'
+
+2022/04/20 13:46:06 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/bootstrap/database.go:66
+[29.555ms] [rows:0] ALTER TABLE `user` ADD `dept_id` varchar(56) DEFAULT null COMMENT '部门id'
+
+2022/04/20 13:46:06 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/bootstrap/database.go:66
+[14.892ms] [rows:0] ALTER TABLE `user` ADD `dept_name` varchar(255) DEFAULT null COMMENT '部门名称'
+
+2022/04/20 13:46:06 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/bootstrap/database.go:66
+[16.433ms] [rows:0] ALTER TABLE `user` ADD `mobile` varchar(20) DEFAULT null COMMENT '手机号'
+
+2022/04/20 13:46:06 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/bootstrap/database.go:66
+[15.061ms] [rows:0] ALTER TABLE `user` ADD `email` varchar(50) DEFAULT null COMMENT '注册邮箱'
+
+2022/04/20 13:46:06 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/bootstrap/database.go:66
+[15.450ms] [rows:0] ALTER TABLE `user` ADD `post_id` smallint DEFAULT null COMMENT '岗位id'
+
+2022/04/20 13:46:06 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/bootstrap/database.go:66
+[14.641ms] [rows:0] ALTER TABLE `user` ADD `post_name` varchar(36) DEFAULT null COMMENT '岗位名称'
+
+2022/04/20 13:46:06 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/bootstrap/database.go:66
+[11.406ms] [rows:0] ALTER TABLE `user` ADD `login_name` varchar(36) DEFAULT null COMMENT '姓名'
+
+2022/04/20 13:46:06 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/bootstrap/database.go:66
+[15.240ms] [rows:0] ALTER TABLE `user` ADD `is_admin` varchar(5) DEFAULT '0' COMMENT '1管理员'
+
+2022/04/20 13:46:06 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/bootstrap/database.go:66
+[17.230ms] [rows:0] ALTER TABLE `user` ADD `sex` varchar(5) DEFAULT null COMMENT '0男1女'
+
+2022/04/20 13:46:06 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/bootstrap/database.go:66
+[49.244ms] [rows:0] ALTER TABLE `user` ADD `salt` varchar(255) DEFAULT null COMMENT '加密盐'
+
+2022/04/20 13:46:06 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/bootstrap/database.go:66
+[12.961ms] [rows:0] ALTER TABLE `user` ADD `create_time` datetime NULL
+
+2022/04/20 13:46:06 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/bootstrap/database.go:66
+[18.167ms] [rows:0] ALTER TABLE `user` ADD `update_time` datetime NULL
+
+2022/04/20 13:46:06 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:234
+[0.248ms] [rows:-] SELECT DATABASE()
+
+2022/04/20 13:46:06 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:237
+[1.098ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'naio%' ORDER BY SCHEMA_NAME='naio' DESC limit 1
+
+2022/04/20 13:46:06 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/bootstrap/database.go:66
+[1.491ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'naio' AND table_name = 'role' AND table_type = 'BASE TABLE'
+
+2022/04/20 13:46:06 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/bootstrap/database.go:66
+[11.899ms] [rows:0] CREATE TABLE `role` (`id` bigint unsigned AUTO_INCREMENT,`name` varchar(64) COMMENT '角色名称',`remark` varchar(200) COMMENT '角色说明',`create_user` varchar(11) COMMENT '创建人',`create_time` datetime NULL,`update_time` datetime NULL,PRIMARY KEY (`id`))
+
+2022/04/20 13:46:06 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:234
+[0.210ms] [rows:-] SELECT DATABASE()
+
+2022/04/20 13:46:06 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:237
+[0.935ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'naio%' ORDER BY SCHEMA_NAME='naio' DESC limit 1
+
+2022/04/20 13:46:06 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/bootstrap/database.go:66
+[1.948ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'naio' AND table_name = 'permission' AND table_type = 'BASE TABLE'
+
+2022/04/20 13:46:06 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/bootstrap/database.go:66
+[11.444ms] [rows:0] CREATE TABLE `permission` (`id` bigint unsigned AUTO_INCREMENT,`parent_id` mediumint unsigned DEFAULT null COMMENT '父权限ID(0为顶级菜单)',`parent_name` varchar(36) COMMENT '父级菜单名称',`label` varchar(64) NOT NULL COMMENT '权限名称',`code` varchar(64) COMMENT '授权标识符',`path` varchar(255) COMMENT '路由地址',`name` varchar(255) COMMENT '路由名称',`url` varchar(255) COMMENT '授权路径',`order_num` smallint DEFAULT 0 COMMENT '序号',`type` tinyint NOT NULL DEFAULT 0 COMMENT '类型(0目录1菜单2按钮)',`icon` varchar(200) COMMENT '图标',`remark` varchar(200) DEFAULT null COMMENT '备注',`create_time` datetime NULL,`update_time` datetime NULL,PRIMARY KEY (`id`))
+
+2022/04/20 13:46:06 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:234
+[0.196ms] [rows:-] SELECT DATABASE()
+
+2022/04/20 13:46:06 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:237
+[1.012ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'naio%' ORDER BY SCHEMA_NAME='naio' DESC limit 1
+
+2022/04/20 13:46:06 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/bootstrap/database.go:66
+[2.258ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'naio' AND table_name = 'user_role' AND table_type = 'BASE TABLE'
+
+2022/04/20 13:46:06 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/bootstrap/database.go:66
+[11.236ms] [rows:0] CREATE TABLE `user_role` (`id` bigint unsigned AUTO_INCREMENT,`user_id` mediumint COMMENT '用户id',`role_id` mediumint COMMENT '角色id',PRIMARY KEY (`id`))
+
+2022/04/20 13:46:06 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:234
+[0.664ms] [rows:-] SELECT DATABASE()
+
+2022/04/20 13:46:06 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:237
+[2.701ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'naio%' ORDER BY SCHEMA_NAME='naio' DESC limit 1
+
+2022/04/20 13:46:06 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/bootstrap/database.go:66
+[5.137ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'naio' AND table_name = 'role_permission' AND table_type = 'BASE TABLE'
+
+2022/04/20 13:46:06 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/bootstrap/database.go:66
+[11.448ms] [rows:0] CREATE TABLE `role_permission` (`id` bigint unsigned AUTO_INCREMENT,`role_id` mediumint COMMENT '角色id',`permission_id` mediumint COMMENT '权限id',PRIMARY KEY (`id`))
+
+2022/04/20 13:46:06 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:234
+[0.255ms] [rows:-] SELECT DATABASE()
+
+2022/04/20 13:46:06 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:237
+[1.947ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'naio%' ORDER BY SCHEMA_NAME='naio' DESC limit 1
+
+2022/04/20 13:46:06 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/bootstrap/database.go:66
+[1.602ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'naio' AND table_name = 'log' AND table_type = 'BASE TABLE'
+
+2022/04/20 13:46:06 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/bootstrap/database.go:66
+[8.578ms] [rows:0] CREATE TABLE `log` (`id` bigint unsigned AUTO_INCREMENT,`create_time` datetime NULL,`update_time` datetime NULL,PRIMARY KEY (`id`))
+
+2022/04/20 13:46:06 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:234
+[0.220ms] [rows:-] SELECT DATABASE()
+
+2022/04/20 13:46:06 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:237
+[0.942ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'naio%' ORDER BY SCHEMA_NAME='naio' DESC limit 1
+
+2022/04/20 13:46:06 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/bootstrap/database.go:66
+[1.485ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'naio' AND table_name = 'dept' AND table_type = 'BASE TABLE'
+
+2022/04/20 13:46:06 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/bootstrap/database.go:66
+[9.967ms] [rows:0] CREATE TABLE `dept` (`id` bigint unsigned AUTO_INCREMENT,`create_time` datetime NULL,`update_time` datetime NULL,PRIMARY KEY (`id`))
