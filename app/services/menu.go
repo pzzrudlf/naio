@@ -10,3 +10,7 @@ var MenuService = new(menuService)
 func (menuService *menuService) GetMenuListByUserId(userId string) (menu models.Menu, err error) {
 	return models.Menu{}, nil
 }
+
+func (menuService *menuService) GetMenuList() (menu models.Menu, err error) {
+	return models.Menu{}, nil
+}

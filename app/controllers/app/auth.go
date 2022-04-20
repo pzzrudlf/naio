@@ -46,13 +46,22 @@ func Login(c *gin.Context) {
 	}
 }
 
-func GetUserInfo(c *gin.Context) {
+func GetAuthInfo(c *gin.Context) {
 	user, err := services.UserService.GetUserInfo(c.Keys["id"].(string))
 	if err != nil {
 		response.BusinessFail(c, err.Error())
 		return
 	}
 	response.Success(c, user)
+}
+
+func GetAuthMenu(c *gin.Context) {
+	menu, err := services.MenuService.GetMenuListByUserId(c.Keys["id"].(string))
+	if err != nil {
+		response.BusinessFail(c, err.Error())
+		return
+	}
+	response.Success(c, menu)
 }
 
 func Logout(c *gin.Context) {

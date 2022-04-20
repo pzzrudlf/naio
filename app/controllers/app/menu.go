@@ -6,8 +6,8 @@ import (
 	"naio/app/services"
 )
 
-func GetMenu(c *gin.Context) {
-	menu, err := services.MenuService.GetMenuListByUserId(c.Keys["id"].(string))
+func GetMenuList(c *gin.Context) {
+	menu, err := services.MenuService.GetMenuList()
 	if err != nil {
 		response.BusinessFail(c, err.Error())
 		return
