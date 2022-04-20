@@ -7,7 +7,7 @@ import (
 )
 
 func GetMenu(c *gin.Context) {
-	menu, err := services.MenuService.GetMenuList()
+	menu, err := services.MenuService.GetMenuListByUserId(c.Keys["id"].(string))
 	if err != nil {
 		response.BusinessFail(c, err.Error())
 		return

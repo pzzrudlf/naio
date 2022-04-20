@@ -46,7 +46,7 @@ func Login(c *gin.Context) {
 	}
 }
 
-func Info(c *gin.Context) {
+func GetUserInfo(c *gin.Context) {
 	user, err := services.UserService.GetUserInfo(c.Keys["id"].(string))
 	if err != nil {
 		response.BusinessFail(c, err.Error())

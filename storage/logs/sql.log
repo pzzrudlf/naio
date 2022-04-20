@@ -535,3 +535,225 @@
 
 2022/04/19 22:26:02 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/app/services/user.go:31
 [4.697ms] [rows:1] SELECT * FROM `user` WHERE mobile = '18511013819' AND `user`.`deleted_at` IS NULL ORDER BY `user`.`id` LIMIT 1
+
+2022/04/19 22:33:17 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/app/services/user.go:31
+[6.169ms] [rows:1] SELECT * FROM `user` WHERE mobile = '18511013819' AND `user`.`deleted_at` IS NULL ORDER BY `user`.`id` LIMIT 1
+
+2022/04/19 22:37:48 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/app/services/user.go:31
+[1.340ms] [rows:1] SELECT * FROM `user` WHERE mobile = '18511013819' AND `user`.`deleted_at` IS NULL ORDER BY `user`.`id` LIMIT 1
+
+2022/04/19 22:44:56 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:234
+[0.186ms] [rows:-] SELECT DATABASE()
+
+2022/04/19 22:44:56 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:237
+[6.864ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'naio%' ORDER BY SCHEMA_NAME='naio' DESC limit 1
+
+2022/04/19 22:44:56 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/bootstrap/database.go:66
+[3.758ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'naio' AND table_name = 'user' AND table_type = 'BASE TABLE'
+
+2022/04/19 22:44:56 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:234
+[0.242ms] [rows:-] SELECT DATABASE()
+
+2022/04/19 22:44:56 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:237
+[0.998ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'naio%' ORDER BY SCHEMA_NAME='naio' DESC limit 1
+
+2022/04/19 22:44:56 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:205
+[4.163ms] [rows:-] SELECT column_name, is_nullable, data_type, character_maximum_length, numeric_precision, numeric_scale FROM information_schema.columns WHERE table_schema = 'naio' AND table_name = 'user' ORDER BY ORDINAL_POSITION
+
+2022/04/19 22:44:56 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:234
+[0.193ms] [rows:-] SELECT DATABASE()
+
+2022/04/19 22:44:56 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:237
+[1.193ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'naio%' ORDER BY SCHEMA_NAME='naio' DESC limit 1
+
+2022/04/19 22:44:56 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/bootstrap/database.go:66
+[5.904ms] [rows:-] SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'naio' AND table_name = 'user' AND index_name = 'idx_user_mobile'
+
+2022/04/19 22:44:56 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:234
+[0.313ms] [rows:-] SELECT DATABASE()
+
+2022/04/19 22:44:56 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:237
+[1.412ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'naio%' ORDER BY SCHEMA_NAME='naio' DESC limit 1
+
+2022/04/19 22:44:56 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/bootstrap/database.go:66
+[2.158ms] [rows:-] SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'naio' AND table_name = 'user' AND index_name = 'idx_user_deleted_at'
+
+2022/04/19 22:44:56 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:234
+[0.193ms] [rows:-] SELECT DATABASE()
+
+2022/04/19 22:44:56 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:237
+[1.034ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'naio%' ORDER BY SCHEMA_NAME='naio' DESC limit 1
+
+2022/04/19 22:44:56 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/bootstrap/database.go:66
+[1.394ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'naio' AND table_name = 'menu' AND table_type = 'BASE TABLE'
+
+2022/04/19 22:44:56 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:234
+[0.205ms] [rows:-] SELECT DATABASE()
+
+2022/04/19 22:44:56 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:237
+[0.916ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'naio%' ORDER BY SCHEMA_NAME='naio' DESC limit 1
+
+2022/04/19 22:44:56 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:205
+[1.454ms] [rows:-] SELECT column_name, is_nullable, data_type, character_maximum_length, numeric_precision, numeric_scale FROM information_schema.columns WHERE table_schema = 'naio' AND table_name = 'menu' ORDER BY ORDINAL_POSITION
+
+2022/04/19 22:44:56 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:234
+[0.188ms] [rows:-] SELECT DATABASE()
+
+2022/04/19 22:44:56 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:237
+[0.769ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'naio%' ORDER BY SCHEMA_NAME='naio' DESC limit 1
+
+2022/04/19 22:44:56 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/bootstrap/database.go:66
+[2.989ms] [rows:-] SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'naio' AND table_name = 'menu' AND index_name = 'idx_menu_deleted_at'
+
+2022/04/19 22:45:15 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:234
+[0.181ms] [rows:-] SELECT DATABASE()
+
+2022/04/19 22:45:15 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:237
+[6.361ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'naio%' ORDER BY SCHEMA_NAME='naio' DESC limit 1
+
+2022/04/19 22:45:15 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/bootstrap/database.go:66
+[1.674ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'naio' AND table_name = 'user' AND table_type = 'BASE TABLE'
+
+2022/04/19 22:45:15 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:234
+[0.221ms] [rows:-] SELECT DATABASE()
+
+2022/04/19 22:45:15 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:237
+[0.907ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'naio%' ORDER BY SCHEMA_NAME='naio' DESC limit 1
+
+2022/04/19 22:45:15 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:205
+[1.795ms] [rows:-] SELECT column_name, is_nullable, data_type, character_maximum_length, numeric_precision, numeric_scale FROM information_schema.columns WHERE table_schema = 'naio' AND table_name = 'user' ORDER BY ORDINAL_POSITION
+
+2022/04/19 22:45:15 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:234
+[0.212ms] [rows:-] SELECT DATABASE()
+
+2022/04/19 22:45:15 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:237
+[0.834ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'naio%' ORDER BY SCHEMA_NAME='naio' DESC limit 1
+
+2022/04/19 22:45:15 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/bootstrap/database.go:66
+[3.572ms] [rows:-] SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'naio' AND table_name = 'user' AND index_name = 'idx_user_mobile'
+
+2022/04/19 22:45:15 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:234
+[0.306ms] [rows:-] SELECT DATABASE()
+
+2022/04/19 22:45:15 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:237
+[1.306ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'naio%' ORDER BY SCHEMA_NAME='naio' DESC limit 1
+
+2022/04/19 22:45:15 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/bootstrap/database.go:66
+[1.324ms] [rows:-] SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'naio' AND table_name = 'user' AND index_name = 'idx_user_deleted_at'
+
+2022/04/19 22:45:15 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:234
+[0.169ms] [rows:-] SELECT DATABASE()
+
+2022/04/19 22:45:15 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:237
+[0.940ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'naio%' ORDER BY SCHEMA_NAME='naio' DESC limit 1
+
+2022/04/19 22:45:15 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/bootstrap/database.go:66
+[1.582ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'naio' AND table_name = 'menu' AND table_type = 'BASE TABLE'
+
+2022/04/19 22:45:15 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:234
+[0.230ms] [rows:-] SELECT DATABASE()
+
+2022/04/19 22:45:15 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:237
+[0.693ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'naio%' ORDER BY SCHEMA_NAME='naio' DESC limit 1
+
+2022/04/19 22:45:15 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:205
+[1.208ms] [rows:-] SELECT column_name, is_nullable, data_type, character_maximum_length, numeric_precision, numeric_scale FROM information_schema.columns WHERE table_schema = 'naio' AND table_name = 'menu' ORDER BY ORDINAL_POSITION
+
+2022/04/19 22:45:15 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:234
+[0.172ms] [rows:-] SELECT DATABASE()
+
+2022/04/19 22:45:15 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:237
+[0.833ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'naio%' ORDER BY SCHEMA_NAME='naio' DESC limit 1
+
+2022/04/19 22:45:15 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/bootstrap/database.go:66
+[1.033ms] [rows:-] SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'naio' AND table_name = 'menu' AND index_name = 'idx_menu_deleted_at'
+
+2022/04/19 23:05:38 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/app/services/user.go:31
+[5.336ms] [rows:1] SELECT * FROM `user` WHERE mobile = '18511013819' AND `user`.`deleted_at` IS NULL ORDER BY `user`.`id` LIMIT 1
+
+2022/04/19 23:12:06 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/app/services/user.go:31
+[4.503ms] [rows:1] SELECT * FROM `user` WHERE mobile = '18511013819' AND `user`.`deleted_at` IS NULL ORDER BY `user`.`id` LIMIT 1
+
+2022/04/19 23:12:20 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:234
+[0.296ms] [rows:-] SELECT DATABASE()
+
+2022/04/19 23:12:20 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:237
+[15.104ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'naio%' ORDER BY SCHEMA_NAME='naio' DESC limit 1
+
+2022/04/19 23:12:20 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/bootstrap/database.go:66
+[6.654ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'naio' AND table_name = 'user' AND table_type = 'BASE TABLE'
+
+2022/04/19 23:12:20 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:234
+[0.222ms] [rows:-] SELECT DATABASE()
+
+2022/04/19 23:12:20 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:237
+[1.126ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'naio%' ORDER BY SCHEMA_NAME='naio' DESC limit 1
+
+2022/04/19 23:12:20 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:205
+[4.359ms] [rows:-] SELECT column_name, is_nullable, data_type, character_maximum_length, numeric_precision, numeric_scale FROM information_schema.columns WHERE table_schema = 'naio' AND table_name = 'user' ORDER BY ORDINAL_POSITION
+
+2022/04/19 23:12:20 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:234
+[0.221ms] [rows:-] SELECT DATABASE()
+
+2022/04/19 23:12:20 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:237
+[1.001ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'naio%' ORDER BY SCHEMA_NAME='naio' DESC limit 1
+
+2022/04/19 23:12:20 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/bootstrap/database.go:66
+[2.076ms] [rows:-] SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'naio' AND table_name = 'user' AND index_name = 'idx_user_deleted_at'
+
+2022/04/19 23:12:20 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:234
+[0.237ms] [rows:-] SELECT DATABASE()
+
+2022/04/19 23:12:20 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:237
+[0.781ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'naio%' ORDER BY SCHEMA_NAME='naio' DESC limit 1
+
+2022/04/19 23:12:20 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/bootstrap/database.go:66
+[1.217ms] [rows:-] SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'naio' AND table_name = 'user' AND index_name = 'idx_user_mobile'
+
+2022/04/19 23:12:20 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:234
+[0.187ms] [rows:-] SELECT DATABASE()
+
+2022/04/19 23:12:20 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:237
+[0.967ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'naio%' ORDER BY SCHEMA_NAME='naio' DESC limit 1
+
+2022/04/19 23:12:20 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/bootstrap/database.go:66
+[1.501ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'naio' AND table_name = 'menu' AND table_type = 'BASE TABLE'
+
+2022/04/19 23:12:20 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:234
+[0.243ms] [rows:-] SELECT DATABASE()
+
+2022/04/19 23:12:20 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:237
+[0.731ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'naio%' ORDER BY SCHEMA_NAME='naio' DESC limit 1
+
+2022/04/19 23:12:20 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:205
+[1.414ms] [rows:-] SELECT column_name, is_nullable, data_type, character_maximum_length, numeric_precision, numeric_scale FROM information_schema.columns WHERE table_schema = 'naio' AND table_name = 'menu' ORDER BY ORDINAL_POSITION
+
+2022/04/19 23:12:20 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:234
+[0.175ms] [rows:-] SELECT DATABASE()
+
+2022/04/19 23:12:20 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:237
+[0.772ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'naio%' ORDER BY SCHEMA_NAME='naio' DESC limit 1
+
+2022/04/19 23:12:20 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/bootstrap/database.go:66
+[1.230ms] [rows:-] SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'naio' AND table_name = 'menu' AND index_name = 'idx_menu_deleted_at'
+
+2022/04/19 23:12:24 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/app/services/user.go:31
+[0.888ms] [rows:1] SELECT * FROM `user` WHERE mobile = '18511013819' AND `user`.`deleted_at` IS NULL ORDER BY `user`.`id` LIMIT 1
+
+2022/04/19 23:12:32 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/app/services/user.go:31
+[0.898ms] [rows:1] SELECT * FROM `user` WHERE mobile = '18511013819' AND `user`.`deleted_at` IS NULL ORDER BY `user`.`id` LIMIT 1
+
+2022/04/19 23:12:57 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/app/services/user.go:31
+[1.216ms] [rows:1] SELECT * FROM `user` WHERE mobile = '18511013819' AND `user`.`deleted_at` IS NULL ORDER BY `user`.`id` LIMIT 1
+
+2022/04/19 23:13:24 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/app/services/user.go:31
+[1.080ms] [rows:1] SELECT * FROM `user` WHERE mobile = '18511013819' AND `user`.`deleted_at` IS NULL ORDER BY `user`.`id` LIMIT 1
+
+2022/04/19 23:13:59 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/app/services/user.go:31
+[0.989ms] [rows:1] SELECT * FROM `user` WHERE mobile = '18511013819' AND `user`.`deleted_at` IS NULL ORDER BY `user`.`id` LIMIT 1
+
+2022/04/19 23:14:19 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/app/services/user.go:31
+[0.783ms] [rows:1] SELECT * FROM `user` WHERE mobile = '18511013819' AND `user`.`deleted_at` IS NULL ORDER BY `user`.`id` LIMIT 1
+
+2022/04/20 08:42:42 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/app/services/user.go:31
+[17.917ms] [rows:1] SELECT * FROM `user` WHERE mobile = '18511013819' AND `user`.`deleted_at` IS NULL ORDER BY `user`.`id` LIMIT 1
