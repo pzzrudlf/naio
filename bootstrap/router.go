@@ -4,7 +4,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"naio/global"
 	"naio/middleware"
-	"naio/routes"
+	"naio/route"
 )
 
 func setupRouter() *gin.Engine {
@@ -31,7 +31,7 @@ func setupRouter() *gin.Engine {
 
 	// 注册 api 分组路由
 	apiGroup := router.Group("/api")
-	routes.SetApiGroupRoutes(apiGroup)
+	route.SetApiGroupRoutes(apiGroup)
 
 	return router
 }

@@ -1,4 +1,4 @@
-package routes
+package route
 
 import (
 	"naio/app/controllers/app"
