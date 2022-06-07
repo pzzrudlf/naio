@@ -2,24 +2,23 @@ package middleware
 
 import (
 	"fmt"
-	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 	"net/http"
 	"strings"
 )
 
+//func Cors() gin.HandlerFunc {
+//	config := cors.DefaultConfig()
+//	config.AllowAllOrigins = true
+//	config.AllowHeaders = []string{"Origin", "Content-Length", "Content-Type", "Authorization"}
+//	config.AllowCredentials = true
+//	config.ExposeHeaders = []string{"New-Token", "New-Expires-In", "Content-Disposition"}
+//
+//	return cors.New(config)
+//}
+
+// Cors 跨域
 func Cors() gin.HandlerFunc {
-	config := cors.DefaultConfig()
-	config.AllowAllOrigins = true
-	config.AllowHeaders = []string{"Origin", "Content-Length", "Content-Type", "Authorization"}
-	config.AllowCredentials = true
-	config.ExposeHeaders = []string{"New-Token", "New-Expires-In", "Content-Disposition"}
-
-	return cors.New(config)
-}
-
-// Cors2 跨域
-func Cors2() gin.HandlerFunc {
 	return func(c *gin.Context) {
 		method := c.Request.Method               //请求方法
 		origin := c.Request.Header.Get("Origin") //请求头部

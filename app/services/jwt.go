@@ -39,6 +39,7 @@ type TokenOutPut struct {
 }
 
 func (jwtService *jwtService) CreateToken(GuardName string, user JwtUser) (tokenData TokenOutPut, err error, token *jwt.Token) {
+	//fmt.Println("JwtUser==>", user.GetName())
 	token = jwt.NewWithClaims(
 		jwt.SigningMethodHS256,
 		CustomClaims{
@@ -104,10 +105,30 @@ func (jwtService *jwtService) GetUserInfo(GuardName string, id string) (user Jwt
 
 // GetUsernameFromClaims casbin中间件验证权限的时候要用到后台用户的名字，此处是从claims中获取管理员的名字
 func (jwtService *jwtService) GetUsernameFromClaims(key string, claims jwt.Claims) string {
+	rv := reflect.ValueOf(claims)
+	//rt := reflect.TypeOf(claims)
+
+	fmt.Println("key==>", key)
+	fmt.Println("rv==>", rv)
+
+	//if rt.Kind() == reflect.Map {
+	for _, k := range rv.MapKeys() {
+		value := rv.MapIndex(k)
+		if fmt.Sprintf("%s", k.Interface()) == key {
+			return fmt.Sprintf("%v", value.Interface())
+		}
+	}
+	//}
+	return ""
+
+}
+
+func (jwtService *jwtService) GetIdFromClaims(key string, claims jwt.Claims) string {
 	v := reflect.ValueOf(claims)
 	if v.Kind() == reflect.Map {
 		for _, k := range v.MapKeys() {
 			value := v.MapIndex(k)
+
 			if fmt.Sprintf("%s", k.Interface()) == key {
 				return fmt.Sprintf("%v", value.Interface())
 			}

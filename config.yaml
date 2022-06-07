@@ -61,3 +61,7 @@ storage:
       secret_key: 'secret_key'
       is_ssl: true
       is_private: false
+
+casbin:
+  rbac_model: conf/rbac_model.conf
+  table_name: system_casbin_rule

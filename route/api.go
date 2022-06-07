@@ -17,6 +17,7 @@ func SetApiGroupRoutes(router *gin.RouterGroup) {
 	// 路由分组
 	jwtRouter := router.Use(middleware.JWTAuth(services.AppGuardName))
 	{
+		//jwtRouter.GET("/auth/info", middleware.CheckPermission(), app.GetAuthInfo)
 		jwtRouter.GET("/auth/info", app.GetAuthInfo)
 		jwtRouter.GET("/auth/menu", app.GetAuthMenu)
 

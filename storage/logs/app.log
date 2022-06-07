@@ -1,0 +1,52 @@
+
+
+[31m2022/06/04 23:06:17 [Recovery] 2022/06/04 - 23:06:17 panic recovered:
+GET /api/auth/info HTTP/1.1
+Host: localhost:8088
+Accept: */*
+Accept-Encoding: gzip, deflate, br
+Authorization: *
+Cache-Control: no-cache
+Connection: keep-alive
+Postman-Token: 7bdf52e0-8c7f-42f4-8e01-c222d0b225bb
+User-Agent: PostmanRuntime/7.29.0
+
+
+reflect: call of reflect.Value.MapKeys on ptr Value
+/usr/local/go/src/reflect/value.go:223 (0x10c25cd)
+	flag.mustBe: panic(&ValueError{methodName(), f.kind()})
+/usr/local/go/src/reflect/value.go:1632 (0x10c23b6)
+	Value.MapKeys: v.mustBe(Map)
+/Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/app/services/jwt.go:115 (0x186d09e)
+	(*jwtService).GetUsernameFromClaims: for _, k := range rv.MapKeys() {
+/Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/middleware/permission.go:33 (0x186f28f)
+	CheckPermission.func1: obj := services.JwtService.GetUsernameFromClaims("username", token.Claims)
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/context.go:168 (0x185bb41)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/recovery.go:99 (0x185bb2c)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/context.go:168 (0x186ea66)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/middleware/cors.go:54 (0x186ea4a)
+	Cors2.func1: c.Next() //  处理请求
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/context.go:168 (0x185bb41)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/recovery.go:99 (0x185bb2c)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/context.go:168 (0x185ac66)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/logger.go:241 (0x185ac49)
+	LoggerWithConfig.func1: c.Next()
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/context.go:168 (0x1859d30)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/gin.go:555 (0x1859998)
+	(*Engine).handleHTTPRequest: c.Next()
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/gin.go:511 (0x18594d1)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+/usr/local/go/src/net/http/server.go:2916 (0x12cdc1a)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+/usr/local/go/src/net/http/server.go:1966 (0x12c8c16)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+/usr/local/go/src/runtime/asm_amd64.s:1571 (0x1065840)
+	goexit: BYTE	$0x90	// NOP
+[0m

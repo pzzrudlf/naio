@@ -1,6 +1,7 @@
 package middleware
 
 import (
+	"fmt"
 	"naio/app/common/response"
 	"naio/app/services"
 	"naio/global"
@@ -25,7 +26,7 @@ func JWTAuth(GuardName string) gin.HandlerFunc {
 		token, err := jwt.ParseWithClaims(tokenStr, &services.CustomClaims{}, func(token *jwt.Token) (interface{}, error) {
 			return []byte(global.App.Config.Jwt.Secret), nil
 		})
-		
+
 		if err != nil || services.JwtService.IsInBlacklist(tokenStr) { // 黑名单校验
 			response.TokenFail(c)
 			c.Abort()
@@ -33,6 +34,7 @@ func JWTAuth(GuardName string) gin.HandlerFunc {
 		}
 
 		claims := token.Claims.(*services.CustomClaims)
+		fmt.Println("middleware/jwt.go<==>claims.Username::", claims.Username)
 		// Token 发布者校验
 		if claims.Issuer != GuardName {
 			response.TokenFail(c)
@@ -59,5 +61,6 @@ func JWTAuth(GuardName string) gin.HandlerFunc {
 
 		c.Set("token", token)
 		c.Set("id", claims.Id)
+		c.Next() // 后续的处理函数可以用过c.Get("token")来获取当前请求的用户token
 	}
 }

@@ -1,5 +1,10 @@
 package services
 
-type casbinService struct{}
+type casbinService struct {
+}
 
 var CasbinService = new(casbinService)
+
+func (casbinService *casbinService) GetList() {
+
+}
