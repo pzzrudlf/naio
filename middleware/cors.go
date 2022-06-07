@@ -7,16 +7,6 @@ import (
 	"strings"
 )
 
-//func Cors() gin.HandlerFunc {
-//	config := cors.DefaultConfig()
-//	config.AllowAllOrigins = true
-//	config.AllowHeaders = []string{"Origin", "Content-Length", "Content-Type", "Authorization"}
-//	config.AllowCredentials = true
-//	config.ExposeHeaders = []string{"New-Token", "New-Expires-In", "Content-Disposition"}
-//
-//	return cors.New(config)
-//}
-
 // Cors 跨域
 func Cors() gin.HandlerFunc {
 	return func(c *gin.Context) {
