@@ -1,0 +1,32 @@
+{
+    "compilerOptions": {
+      "target": "esnext",
+      "useDefineForClassFields": true,
+      "composite": false,
+      "incremental": false,
+      "module": "esnext",
+      "moduleResolution": "node",
+      "strict": true,
+      "jsx": "preserve",
+      "sourceMap": true,
+      "resolveJsonModule": true,
+      "esModuleInterop": true,
+      "lib": ["esnext", "dom"],
+      "allowSyntheticDefaultImports": true,
+      "skipLibCheck": true,
+      "noImplicitAny": false,
+      // "allowJs": true,
+      // "types": ["element-plus/global"],
+      "types": ["vite-plugin-svg-icons/client"],
+      // 解决用字符串做下标报错
+      "suppressImplicitAnyIndexErrors": true,
+      // alias @
+      "baseUrl": "./",
+      "paths": {
+        "@/*":["./src/*"]
+      }
+    },
+    "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
+    "references": [{ "path": "./tsconfig.node.json" }]
+  }
+  
