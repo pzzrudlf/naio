@@ -7,7 +7,8 @@ import (
 
 func main() {
 	// 初始化配置
-	bootstrap.InitializeConfig()
+	global.App.ConfigViper = bootstrap.InitializeConfig()
+	//global.App.Config
 
 	// 初始化日志
 	global.App.Log = bootstrap.InitializeLog()
@@ -35,6 +36,7 @@ func main() {
 
 	// 初始化计划任务
 	bootstrap.InitializeCron()
+	//global.App.Cron
 
 	//fmt.Println(global.App)
 	// 启动服务器
