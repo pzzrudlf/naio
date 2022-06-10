@@ -1,7 +1,6 @@
 package middleware
 
 import (
-	"fmt"
 	"github.com/gin-gonic/gin"
 	"github.com/golang-jwt/jwt"
 	"naio/app/common/response"
@@ -21,13 +20,8 @@ func CheckPermission() gin.HandlerFunc {
 		})
 		//
 		claims := token.Claims.(*services.CustomClaims)
-		obj := claims.Username
 
-		fmt.Println("middleware/permission.go<==>token.Claims::", token.Claims)
-		fmt.Println("middleware/permission.go<==>claims::", claims)
-		fmt.Println("middleware/permission.go<==>obj::", obj)
-
-		if res, err := global.App.Casbin.Enforce(obj, c.Request.URL.Path, c.Request.Method); err != nil {
+		if res, err := global.App.Casbin.Enforce(claims.Username, c.Request.URL.Path, c.Request.Method); err != nil {
 			response.CasbinFail(c, err.Error())
 			c.Abort()
 			return
