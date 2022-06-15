@@ -1,6 +1,6 @@
 package models
 
-type Dept struct {
+type Department struct {
 	ID
 	Timestamps
 }

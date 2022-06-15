@@ -70,7 +70,7 @@ func initMysqlTables(db *gorm.DB) {
 		models.UserRole{},
 		models.RolePermission{},
 		models.Log{},
-		models.Dept{},
+		models.Department{},
 	)
 	if err != nil {
 		global.App.Log.Error("migrate table failed", zap.Any("err", err))

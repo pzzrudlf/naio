@@ -7,7 +7,7 @@
 #
 # 主机: localhost (MySQL 8.0.18)
 # 数据库: naio
-# 生成时间: 2022-04-20 05:59:24 +0000
+# 生成时间: 2022-06-15 07:55:48 +0000
 # ************************************************************
 
 
@@ -18,6 +18,51 @@ SET NAMES utf8mb4;
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE='NO_AUTO_VALUE_ON_ZERO', SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+
+# 转储表 casbin_rule
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `casbin_rule`;
+
+CREATE TABLE `casbin_rule` (
+  `p_type` varchar(100) DEFAULT NULL,
+  `v0` varchar(100) DEFAULT NULL,
+  `v1` varchar(100) DEFAULT NULL,
+  `v2` varchar(100) DEFAULT NULL,
+  `v3` varchar(100) DEFAULT NULL,
+  `v4` varchar(100) DEFAULT NULL,
+  `v5` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
+
+# 转储表 department
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `department`;
+
+CREATE TABLE `department` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `create_time` datetime DEFAULT NULL,
+  `update_time` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
+
+# 转储表 log
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `log`;
+
+CREATE TABLE `log` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `create_time` datetime DEFAULT NULL,
+  `update_time` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
 
 
 # 转储表 permission
@@ -49,44 +94,26 @@ LOCK TABLES `permission` WRITE;
 INSERT INTO `permission` (`id`, `parent_id`, `parent_name`, `label`, `code`, `path`, `name`, `url`, `order_num`, `type`, `icon`, `remark`, `create_time`, `update_time`)
 VALUES
 	(17,0,'顶级菜单','系统管理','sys:manage','/system','system','/system/system',1,0,'Setting',NULL,'2023-08-08 11:11:11','2023-08-09 15:26:28'),
-	(18,17,'系统管理','用户管理','sys:user','/userList','userList','/system/User/UserList',3,1,'UserFilled',NULL,'2023-08-08 11:11:11','2023-08-09 15:26:28'),
-	(20,18,NULL,'新增','sys:user:add',NULL,NULL,'',NULL,2,'User','新增用户','2023-08-08 11:11:11','2023-08-09 15:26:28'),
-	(21,18,NULL,'修改','sys:user:edit',NULL,NULL,'',NULL,2,'el-icon-document','修改用户','2023-08-08 11:11:11','2023-08-09 15:26:28'),
-	(22,18,NULL,'删除','sys:user:delete',NULL,NULL,'',NULL,2,'el-icon-document','删除用户','2023-08-08 11:11:11','2023-08-09 15:26:28'),
-	(23,17,'系统管理','角色管理','sys:role','/roleList','roleList','/system/Role/RoleList',4,1,'Wallet',NULL,'2023-08-08 11:11:11','2023-08-09 15:26:28'),
-	(25,23,NULL,'新增','sys:role:add',NULL,NULL,'',NULL,2,'el-icon-document','新增角色','2023-08-08 11:11:11','2023-08-09 15:26:28'),
-	(26,23,NULL,'修改','sys:role:edit',NULL,NULL,'',NULL,2,'el-icon-document','修改角色','2023-08-08 11:11:11','2023-08-09 15:26:28'),
-	(27,23,NULL,'删除','sys:role:delete',NULL,NULL,'',NULL,2,'el-icon-document','删除角色','2023-08-08 11:11:11','2023-08-09 15:26:28'),
-	(28,17,'系统管理','权限管理','sys:menu','/menuList','menuList','/system/Menu/MenuList',5,1,'Menu',NULL,'2023-08-08 11:11:11','2023-08-09 15:26:28'),
-	(30,28,NULL,'新增','sys:menu:add',NULL,NULL,'',NULL,2,'el-icon-document','新增权限','2023-08-08 11:11:11','2023-08-09 15:26:28'),
-	(31,28,NULL,'修改','sys:menu:edit',NULL,NULL,'',NULL,2,'el-icon-document','修改权限','2023-08-08 11:11:11','2023-08-09 15:26:28'),
-	(32,28,NULL,'删除','sys:menu:delete',NULL,NULL,'',NULL,2,'el-icon-document','删除权限','2023-08-08 11:11:11','2023-08-09 15:26:28'),
-	(33,17,'系统管理','机构管理','sys:dept','/department','department','/system/department/department',2,1,'List','机构管理','2020-04-12 22:58:29','2020-04-08 17:12:19'),
-	(34,0,'顶级菜单','商品管理','sys:goods','/goods','goods','/goods/index',2,0,'Tickets',NULL,'2020-04-12 22:49:47','2020-04-12 17:22:03'),
-	(36,34,'商品管理','分类管理','sys:goodsCategory','/goodCategory','goodCategory','/goods/goodsCategory/goodsCategoryList',1,1,'ShoppingBag',NULL,'2020-04-12 22:54:32','2020-04-12 17:26:30'),
-	(37,34,NULL,'品牌管理','sys:goodsBrand','/goodsBrand','goodsBrand','/goods/goodsBrand/goodsBrandList',2,1,'Management',NULL,'2020-04-12 17:32:04','2020-04-12 17:32:04'),
-	(38,36,'分类管理','新增','sys:addGoodsCategory','','',NULL,0,2,'el-icon-document',NULL,'2020-04-12 17:33:58','2020-04-12 17:33:58'),
-	(39,36,'分类管理','编辑','sys:editGoodsCategory','','',NULL,1,2,'el-icon-document',NULL,'2020-04-12 17:35:30','2020-04-12 17:35:30'),
-	(42,0,'顶级菜单','系统工具','sys:systenConfig','/systenConfig','systenConfig','/systenConfig',3,0,'ChatLineSquare',NULL,'2020-04-12 22:50:03','2020-04-12 17:40:41'),
-	(43,42,'系统工具','日志管理','sys:systemCode','/systemCode','systemCode','/system/config/code',0,1,'Operation',NULL,'2020-04-16 12:44:42','2020-04-12 17:44:06'),
-	(46,33,'机构管理','新增','sys:addDepartment','','',NULL,0,2,'el-icon-document',NULL,'2020-04-12 19:58:48','2020-04-12 19:58:48'),
-	(76,33,'机构管理','编辑','sys:editDept','','',NULL,1,2,'el-icon-document',NULL,'2020-04-12 20:42:20','2020-04-12 20:42:20'),
-	(77,42,'系统工具','接口文档','sys:document','/document','http://42.193.158.170:8089/swagger-ui/index.html','/system/config/systemDocument',0,1,'DocumentCopy',NULL,'2020-04-13 11:31:45','2020-04-13 11:31:45'),
-	(78,33,'机构管理','删除','sys:deleteDept','','','',3,2,'el-icon-document',NULL,'2020-04-18 10:25:55','2020-04-18 10:25:55'),
-	(79,23,'角色管理','分配权限','sys:role:assign','','','',0,2,'el-icon-document',NULL,'2020-04-18 10:31:05','2020-04-18 10:31:05'),
-	(80,18,'用户管理','分配角色','sys:user:assign','','','',0,2,'el-icon-document',NULL,'2020-04-18 10:50:14','2020-04-18 10:50:14'),
-	(85,43,'代码生成','新增','sys:code:add','','','',0,2,'',NULL,'2021-02-02 22:05:31','2021-02-02 22:05:31'),
-	(86,43,'代码生成','编辑','sys:code:edit','','','',1,2,'',NULL,'2021-02-02 22:06:15','2021-02-02 22:06:15'),
-	(87,37,'品牌管理','新增','sys:brand:add','','','',0,2,'',NULL,'2021-02-03 09:08:24','2021-02-03 09:08:24'),
-	(88,37,'品牌管理','编辑','sys:brand:edit','','','',1,2,'',NULL,'2021-02-03 09:08:50','2021-02-03 09:08:50'),
-	(89,37,'品牌管理','删除','sys:brand:delete','','','',2,2,'',NULL,'2021-02-03 09:09:18','2021-02-03 09:09:18'),
-	(100,34,'商品管理','手机分类','sys:phoneRoot','/phone1','phone1','',0,0,'UserFilled',NULL,'2022-03-08 12:49:08','2022-03-08 12:49:08'),
-	(101,100,'手机分类','华为手机','sys:phone:index','/phone','phone','/phone/index',1,1,'UserFilled',NULL,'2022-03-08 12:49:58','2022-03-08 12:49:58'),
-	(102,34,'商品管理','分类测试','sys:1','/test2','test','',1,0,'ShoppingBag',NULL,'2022-03-08 16:11:52','2022-03-08 16:11:52'),
-	(103,102,'分类测试','测试1-1','sys:1-1','/test','test','/test/test',2,1,'ShoppingBag',NULL,'2022-03-08 16:12:37','2022-03-08 16:12:37'),
-	(104,0,'顶级菜单','测试1-1-1','sys:test','/test3','test3','/test/test3',1,1,'ShoppingBag',NULL,'2022-03-08 16:14:26','2022-03-08 16:14:26'),
-	(105,102,'分类测试','测试1-2','sys:cs1','/cs1','cs1','/cs1/index',1,1,'Menu',NULL,'2022-03-08 16:20:15','2022-03-08 16:20:15'),
-	(106,105,'测试1-2','测试1-2-1','sys:cs2','/cs2','cs2','/test/test2',0,1,'Menu',NULL,'2022-03-08 16:21:07','2022-03-08 16:21:07');
+	(18,17,'系统管理','用户管理','sys:user','/userList','userList','/system/user/UserList',3,1,'UserFilled',NULL,'2023-08-08 11:11:11','2023-08-09 15:26:28'),
+	(20,18,'用户管理','新增','sys:user:add',NULL,NULL,NULL,NULL,2,'User','新增用户','2023-08-08 11:11:11','2023-08-09 15:26:28'),
+	(21,18,'用户管理','修改','sys:user:edit',NULL,NULL,NULL,NULL,2,'el-icon-document','修改用户','2023-08-08 11:11:11','2023-08-09 15:26:28'),
+	(22,18,'用户管理','删除','sys:user:delete',NULL,NULL,NULL,NULL,2,'el-icon-document','删除用户','2023-08-08 11:11:11','2023-08-09 15:26:28'),
+	(23,17,'系统管理','角色管理','sys:role','/roleList','roleList','/system/role/RoleList',4,1,'Wallet',NULL,'2023-08-08 11:11:11','2023-08-09 15:26:28'),
+	(25,23,'角色管理','新增','sys:role:add',NULL,NULL,NULL,NULL,2,'el-icon-document','新增角色','2023-08-08 11:11:11','2023-08-09 15:26:28'),
+	(26,23,'角色管理','修改','sys:role:edit',NULL,NULL,NULL,NULL,2,'el-icon-document','修改角色','2023-08-08 11:11:11','2023-08-09 15:26:28'),
+	(27,23,'角色管理','删除','sys:role:delete',NULL,NULL,NULL,NULL,2,'el-icon-document','删除角色','2023-08-08 11:11:11','2023-08-09 15:26:28'),
+	(28,17,'系统管理','权限管理','sys:menu','/menuList','menuList','/system/menu/MenuList',5,1,'Menu',NULL,'2023-08-08 11:11:11','2023-08-09 15:26:28'),
+	(30,28,'菜单管理','新增','sys:menu:add',NULL,NULL,NULL,NULL,2,'el-icon-document','新增权限','2023-08-08 11:11:11','2023-08-09 15:26:28'),
+	(31,28,'菜单管理','修改','sys:menu:edit',NULL,NULL,NULL,NULL,2,'el-icon-document','修改权限','2023-08-08 11:11:11','2023-08-09 15:26:28'),
+	(32,28,'菜单管理','删除','sys:menu:delete',NULL,NULL,NULL,NULL,2,'el-icon-document','删除权限','2023-08-08 11:11:11','2023-08-09 15:26:28'),
+	(33,17,'系统管理','机构管理','sys:department','/departmentList','departmentList','/system/department/DepartmentList',2,1,'List','机构管理','2020-04-12 22:58:29','2020-04-08 17:12:19'),
+	(46,33,'机构管理','新增','sys:department:add',NULL,NULL,NULL,0,2,'el-icon-document','新增机构','2020-04-12 19:58:48','2020-04-12 19:58:48'),
+	(76,33,'机构管理','编辑','sys:department:edit',NULL,NULL,NULL,1,2,'el-icon-document','修改机构\n','2020-04-12 20:42:20','2020-04-12 20:42:20'),
+	(78,33,'机构管理','删除','sys:department:delete',NULL,NULL,NULL,3,2,'el-icon-document','删除机构','2020-04-18 10:25:55','2020-04-18 10:25:55'),
+	(79,23,'角色管理','分配权限','sys:role:assign',NULL,NULL,NULL,0,2,'el-icon-document','分配权限','2020-04-18 10:31:05','2020-04-18 10:31:05'),
+	(80,18,'用户管理','分配角色','sys:user:assign',NULL,NULL,NULL,0,2,'el-icon-document','分配角色','2020-04-18 10:50:14','2020-04-18 10:50:14'),
+	(85,43,'代码生成','新增','sys:code:add',NULL,NULL,NULL,0,2,'',NULL,'2021-02-02 22:05:31','2021-02-02 22:05:31'),
+	(86,43,'代码生成','编辑','sys:code:edit',NULL,NULL,NULL,1,2,'',NULL,'2021-02-02 22:06:15','2021-02-02 22:06:15');
 
 /*!40000 ALTER TABLE `permission` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -116,9 +143,7 @@ VALUES
 	(10,'超级管理员','超级管理员','9','2023-08-08 11:11:11','2023-08-08 11:11:11'),
 	(13,'销售管理员','管理销售人员','9','2020-04-14 12:22:53','2020-04-14 12:22:53'),
 	(14,'财务管理员','管理公司财务','9','2020-04-14 12:23:10','2020-04-14 12:23:10'),
-	(15,'人才管理员','人才管理员','9','2020-04-18 09:58:05','2020-04-18 09:58:05'),
-	(62,'测试','测试',NULL,'2021-11-22 13:09:05','2021-11-22 13:09:05'),
-	(63,'测试11','',NULL,'2021-11-22 14:07:31','2021-11-22 14:07:31');
+	(15,'人才管理员','人才管理员','9','2020-04-18 09:58:05','2020-04-18 09:58:05');
 
 /*!40000 ALTER TABLE `role` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -157,36 +182,6 @@ VALUES
 	(40,14,33),
 	(41,14,46),
 	(42,14,76),
-	(43,14,34),
-	(44,14,36),
-	(45,14,38),
-	(46,14,39),
-	(47,14,37),
-	(48,14,40),
-	(49,14,41),
-	(50,14,42),
-	(51,14,43),
-	(52,14,77),
-	(362,16,17),
-	(363,16,18),
-	(364,16,20),
-	(560,35,21),
-	(561,35,22),
-	(562,35,80),
-	(563,35,25),
-	(564,35,26),
-	(565,35,79),
-	(566,35,17),
-	(567,35,18),
-	(568,35,23),
-	(569,56,46),
-	(570,56,17),
-	(571,56,33),
-	(575,57,78),
-	(576,57,79),
-	(577,57,17),
-	(578,57,33),
-	(579,57,23),
 	(795,15,20),
 	(796,15,21),
 	(797,15,22),
@@ -199,14 +194,6 @@ VALUES
 	(804,15,17),
 	(805,15,18),
 	(806,15,33),
-	(941,62,78),
-	(942,62,17),
-	(943,62,33),
-	(954,63,33),
-	(955,63,46),
-	(956,63,76),
-	(957,63,78),
-	(958,63,17),
 	(1073,13,17),
 	(1074,13,33),
 	(1075,13,46),
@@ -226,14 +213,6 @@ VALUES
 	(1089,13,30),
 	(1090,13,31),
 	(1091,13,32),
-	(1092,13,36),
-	(1093,13,38),
-	(1094,13,39),
-	(1095,13,100),
-	(1096,13,101),
-	(1097,13,77),
-	(1098,13,34),
-	(1099,13,42),
 	(1163,9,17),
 	(1164,9,33),
 	(1165,9,46),
@@ -253,22 +232,8 @@ VALUES
 	(1179,9,30),
 	(1180,9,31),
 	(1181,9,32),
-	(1182,9,100),
-	(1183,9,101),
-	(1184,9,36),
-	(1185,9,38),
-	(1186,9,39),
-	(1187,9,102),
-	(1188,9,105),
-	(1189,9,106),
-	(1190,9,103),
-	(1191,9,104),
-	(1192,9,42),
-	(1193,9,43),
 	(1194,9,85),
 	(1195,9,86),
-	(1196,9,77),
-	(1197,9,34),
 	(1198,10,17),
 	(1199,10,33),
 	(1200,10,46),
@@ -287,20 +252,7 @@ VALUES
 	(1213,10,28),
 	(1214,10,30),
 	(1215,10,31),
-	(1216,10,32),
-	(1217,10,100),
-	(1218,10,101),
-	(1219,10,36),
-	(1220,10,38),
-	(1221,10,39),
-	(1222,10,102),
-	(1223,10,105),
-	(1224,10,106),
-	(1225,10,103),
-	(1226,10,104),
-	(1227,10,77),
-	(1228,10,34),
-	(1229,10,42);
+	(1216,10,32);
 
 /*!40000 ALTER TABLE `role_permission` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -345,7 +297,7 @@ LOCK TABLES `user` WRITE;
 INSERT INTO `user` (`id`, `username`, `password`, `created_at`, `updated_at`, `deleted_at`, `is_account_non_expired`, `is_account_non_locked`, `is_credentials_non_expired`, `is_enabled`, `nick_name`, `dept_id`, `dept_name`, `mobile`, `email`, `post_id`, `post_name`, `login_name`, `is_admin`, `sex`, `salt`, `create_time`, `update_time`)
 VALUES
 	(1,'admin','$2a$04$jQmNRGi69AKw/FUwU4a6A.EC1SG8wyJTJTz3uBLsa6toMJji3TX7C','2022-04-20 11:56:06','2022-04-20 11:56:06',NULL,1,1,1,1,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'0',NULL,NULL,NULL,NULL),
-	(9,'admin','$2a$04$jQmNRGi69AKw/FUwU4a6A.EC1SG8wyJTJTz3uBLsa6toMJji3TX7C',NULL,NULL,NULL,1,1,1,1,'超级管理员','1','高原机械制造有限公司','110','admin@163.com',NULL,NULL,'超级管理员','1','0','feb60bc9648dcc69063dc0f7eefc46ee','2023-08-08 11:11:11','2019-12-16 10:25:53');
+	(9,'test','$2a$04$jQmNRGi69AKw/FUwU4a6A.EC1SG8wyJTJTz3uBLsa6toMJji3TX7C',NULL,NULL,NULL,1,1,1,1,'超级管理员','1','高原机械制造有限公司','110','admin@163.com',NULL,NULL,'超级管理员','1','0','feb60bc9648dcc69063dc0f7eefc46ee','2023-08-08 11:11:11','2019-12-16 10:25:53');
 
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
