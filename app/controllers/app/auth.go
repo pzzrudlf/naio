@@ -6,6 +6,7 @@ import (
 	"naio/app/common/request"
 	"naio/app/common/response"
 	"naio/app/services"
+	"net/http"
 )
 
 func Register(c *gin.Context) {
@@ -23,7 +24,13 @@ func Register(c *gin.Context) {
 			response.BusinessFail(c, err.Error())
 			return
 		}
-		response.Success(c, tokenData)
+		//response.Success(c, tokenData)
+		c.JSON(http.StatusOK, response.AuthResp{
+			Code:       http.StatusOK,
+			ExpireTime: tokenData.ExpiresIn,
+			Id:         user.GetUid(),
+			Token:      tokenData.AccessToken,
+		})
 	}
 }
 
@@ -42,7 +49,13 @@ func Login(c *gin.Context) {
 			response.BusinessFail(c, err.Error())
 			return
 		}
-		response.Success(c, tokenData)
+		//response.Success(c, tokenData)
+		c.JSON(http.StatusOK, response.AuthResp{
+			Code:       http.StatusOK,
+			ExpireTime: tokenData.ExpiresIn,
+			Id:         user.GetUid(),
+			Token:      tokenData.AccessToken,
+		})
 	}
 }
 
