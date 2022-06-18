@@ -2,6 +2,7 @@ package services
 
 import (
 	"errors"
+	"fmt"
 	"naio/app/common/request"
 	"naio/app/models"
 	"naio/global"
@@ -40,7 +41,9 @@ func (userService *userService) GetUserInfo(userid string) (user models.User, er
 	intId, _ := strconv.Atoi(userid)
 	var permissions []models.Permission
 
-	global.App.DB.Raw("select * from sys_permission where id in (select permission_id from sys_role_permission where role_id = (select role_id from sys_user_role where user_id = ?))", intId).Scan(&permissions)
+	global.App.DB.Raw("select code from sys_permission where id in (select permission_id from sys_role_permission where role_id = (select role_id from sys_user_role where user_id = ?))", intId).Scan(&permissions)
+
+	fmt.Println(permissions)
 
 	err = global.App.DB.First(&user, intId).Error
 	if err != nil {
