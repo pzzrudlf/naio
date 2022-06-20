@@ -1,0 +1,393 @@
+
+2022/06/20 23:52:33 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/app/services/user.go:43
+[6.797ms] [rows:17] select code from permission where id in (select permission_id from role_permission where role_id = (select role_id from user_role where user_id = 1))
+
+2022/06/20 23:52:33 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/app/services/user.go:46
+[2.388ms] [rows:1] SELECT * FROM `user` WHERE `user`.`id` = 1 ORDER BY `user`.`id` LIMIT 1
+
+2022/06/20 23:52:33 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/app/services/menu.go:23
+[1.596ms] [rows:4] select id,parent_id,path,url,name,label,icon,code from permission where type in (0,1) and id in (select permission_id from role_permission where role_id = (select role_id from user_role where user_id = 1))
+
+2022/06/20 23:53:01 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/app/services/user.go:32
+[1.526ms] [rows:1] SELECT * FROM `user` WHERE username = 'admin' ORDER BY `user`.`id` LIMIT 1
+
+2022/06/20 23:55:51 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/app/services/user.go:32
+[0.878ms] [rows:1] SELECT * FROM `user` WHERE username = 'admin' ORDER BY `user`.`id` LIMIT 1
+
+2022/06/20 23:55:51 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/app/services/user.go:43
+[1.836ms] [rows:17] select code from permission where id in (select permission_id from role_permission where role_id = (select role_id from user_role where user_id = 1))
+
+2022/06/20 23:55:51 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/app/services/user.go:46
+[0.774ms] [rows:1] SELECT * FROM `user` WHERE `user`.`id` = 1 ORDER BY `user`.`id` LIMIT 1
+
+2022/06/20 23:55:51 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/app/services/menu.go:23
+[3.480ms] [rows:4] select id,parent_id,path,url,name,label,icon,code from permission where type in (0,1) and id in (select permission_id from role_permission where role_id = (select role_id from user_role where user_id = 1))
+
+2022/06/20 23:57:39 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/app/services/user.go:43
+[4.089ms] [rows:17] select code from permission where id in (select permission_id from role_permission where role_id = (select role_id from user_role where user_id = 1))
+
+2022/06/20 23:57:39 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/app/services/user.go:46
+[1.818ms] [rows:1] SELECT * FROM `user` WHERE `user`.`id` = 1 ORDER BY `user`.`id` LIMIT 1
+
+2022/06/20 23:57:39 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/app/services/menu.go:23
+[1.343ms] [rows:4] select id,parent_id,path,url,name,label,icon,code from permission where type in (0,1) and id in (select permission_id from role_permission where role_id = (select role_id from user_role where user_id = 1))
+
+2022/06/20 23:59:30 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/app/services/user.go:32
+[2.582ms] [rows:1] SELECT * FROM `user` WHERE username = 'admin' ORDER BY `user`.`id` LIMIT 1
+
+2022/06/20 23:59:37 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/app/services/user.go:32 record not found
+[0.972ms] [rows:0] SELECT * FROM `user` WHERE username = 'admin44' ORDER BY `user`.`id` LIMIT 1
+
+2022/06/20 23:59:40 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/app/services/user.go:32
+[10.369ms] [rows:1] SELECT * FROM `user` WHERE username = 'admin' ORDER BY `user`.`id` LIMIT 1
+
+2022/06/20 23:59:40 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/app/services/user.go:43
+[0.853ms] [rows:17] select code from permission where id in (select permission_id from role_permission where role_id = (select role_id from user_role where user_id = 1))
+
+2022/06/20 23:59:40 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/app/services/user.go:46
+[1.194ms] [rows:1] SELECT * FROM `user` WHERE `user`.`id` = 1 ORDER BY `user`.`id` LIMIT 1
+
+2022/06/20 23:59:40 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/app/services/menu.go:23
+[4.119ms] [rows:4] select id,parent_id,path,url,name,label,icon,code from permission where type in (0,1) and id in (select permission_id from role_permission where role_id = (select role_id from user_role where user_id = 1))
+
+2022/06/21 00:01:23 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/app/services/user.go:43
+[1.307ms] [rows:17] select code from permission where id in (select permission_id from role_permission where role_id = (select role_id from user_role where user_id = 1))
+
+2022/06/21 00:01:23 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/app/services/user.go:46
+[0.740ms] [rows:1] SELECT * FROM `user` WHERE `user`.`id` = 1 ORDER BY `user`.`id` LIMIT 1
+
+2022/06/21 00:01:23 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/app/services/menu.go:23
+[1.262ms] [rows:4] select id,parent_id,path,url,name,label,icon,code from permission where type in (0,1) and id in (select permission_id from role_permission where role_id = (select role_id from user_role where user_id = 1))
+
+2022/06/21 00:01:28 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/app/services/user.go:43
+[1.175ms] [rows:17] select code from permission where id in (select permission_id from role_permission where role_id = (select role_id from user_role where user_id = 1))
+
+2022/06/21 00:01:28 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/app/services/user.go:46
+[1.482ms] [rows:1] SELECT * FROM `user` WHERE `user`.`id` = 1 ORDER BY `user`.`id` LIMIT 1
+
+2022/06/21 00:01:28 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/app/services/menu.go:23
+[1.352ms] [rows:4] select id,parent_id,path,url,name,label,icon,code from permission where type in (0,1) and id in (select permission_id from role_permission where role_id = (select role_id from user_role where user_id = 1))
+
+2022/06/21 00:02:11 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/app/services/user.go:43
+[1.032ms] [rows:17] select code from permission where id in (select permission_id from role_permission where role_id = (select role_id from user_role where user_id = 1))
+
+2022/06/21 00:02:11 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/app/services/user.go:46
+[0.819ms] [rows:1] SELECT * FROM `user` WHERE `user`.`id` = 1 ORDER BY `user`.`id` LIMIT 1
+
+2022/06/21 00:02:11 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/app/services/menu.go:23
+[1.179ms] [rows:4] select id,parent_id,path,url,name,label,icon,code from permission where type in (0,1) and id in (select permission_id from role_permission where role_id = (select role_id from user_role where user_id = 1))
+
+2022/06/21 00:27:18 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:234
+[0.194ms] [rows:-] SELECT DATABASE()
+
+2022/06/21 00:27:18 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:237
+[1.900ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'naio%' ORDER BY SCHEMA_NAME='naio' DESC limit 1
+
+2022/06/21 00:27:18 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/bootstrap/database.go:66
+[1.549ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'naio' AND table_name = 'user' AND table_type = 'BASE TABLE'
+
+2022/06/21 00:27:18 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:234
+[0.284ms] [rows:-] SELECT DATABASE()
+
+2022/06/21 00:27:18 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:237
+[1.055ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'naio%' ORDER BY SCHEMA_NAME='naio' DESC limit 1
+
+2022/06/21 00:27:18 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:205
+[1.885ms] [rows:-] SELECT column_name, is_nullable, data_type, character_maximum_length, numeric_precision, numeric_scale FROM information_schema.columns WHERE table_schema = 'naio' AND table_name = 'user' ORDER BY ORDINAL_POSITION
+
+2022/06/21 00:27:18 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:234
+[0.179ms] [rows:-] SELECT DATABASE()
+
+2022/06/21 00:27:18 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:237
+[0.789ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'naio%' ORDER BY SCHEMA_NAME='naio' DESC limit 1
+
+2022/06/21 00:27:18 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/bootstrap/database.go:66
+[1.149ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'naio' AND table_name = 'role' AND table_type = 'BASE TABLE'
+
+2022/06/21 00:27:18 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:234
+[0.183ms] [rows:-] SELECT DATABASE()
+
+2022/06/21 00:27:18 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:237
+[0.844ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'naio%' ORDER BY SCHEMA_NAME='naio' DESC limit 1
+
+2022/06/21 00:27:18 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:205
+[1.683ms] [rows:-] SELECT column_name, is_nullable, data_type, character_maximum_length, numeric_precision, numeric_scale FROM information_schema.columns WHERE table_schema = 'naio' AND table_name = 'role' ORDER BY ORDINAL_POSITION
+
+2022/06/21 00:27:18 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:234
+[0.182ms] [rows:-] SELECT DATABASE()
+
+2022/06/21 00:27:18 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:237
+[0.820ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'naio%' ORDER BY SCHEMA_NAME='naio' DESC limit 1
+
+2022/06/21 00:27:18 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/bootstrap/database.go:66
+[1.146ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'naio' AND table_name = 'permission' AND table_type = 'BASE TABLE'
+
+2022/06/21 00:27:18 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:234
+[0.189ms] [rows:-] SELECT DATABASE()
+
+2022/06/21 00:27:18 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:237
+[0.648ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'naio%' ORDER BY SCHEMA_NAME='naio' DESC limit 1
+
+2022/06/21 00:27:18 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:205
+[1.329ms] [rows:-] SELECT column_name, is_nullable, data_type, character_maximum_length, numeric_precision, numeric_scale FROM information_schema.columns WHERE table_schema = 'naio' AND table_name = 'permission' ORDER BY ORDINAL_POSITION
+
+2022/06/21 00:27:18 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:234
+[0.210ms] [rows:-] SELECT DATABASE()
+
+2022/06/21 00:27:18 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:237
+[0.688ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'naio%' ORDER BY SCHEMA_NAME='naio' DESC limit 1
+
+2022/06/21 00:27:18 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/bootstrap/database.go:66
+[1.172ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'naio' AND table_name = 'user_role' AND table_type = 'BASE TABLE'
+
+2022/06/21 00:27:18 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:234
+[0.166ms] [rows:-] SELECT DATABASE()
+
+2022/06/21 00:27:18 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:237
+[0.661ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'naio%' ORDER BY SCHEMA_NAME='naio' DESC limit 1
+
+2022/06/21 00:27:18 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:205
+[1.076ms] [rows:-] SELECT column_name, is_nullable, data_type, character_maximum_length, numeric_precision, numeric_scale FROM information_schema.columns WHERE table_schema = 'naio' AND table_name = 'user_role' ORDER BY ORDINAL_POSITION
+
+2022/06/21 00:27:18 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:234
+[0.157ms] [rows:-] SELECT DATABASE()
+
+2022/06/21 00:27:18 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:237
+[0.610ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'naio%' ORDER BY SCHEMA_NAME='naio' DESC limit 1
+
+2022/06/21 00:27:18 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/bootstrap/database.go:66
+[1.091ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'naio' AND table_name = 'role_permission' AND table_type = 'BASE TABLE'
+
+2022/06/21 00:27:18 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:234
+[0.178ms] [rows:-] SELECT DATABASE()
+
+2022/06/21 00:27:18 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:237
+[0.837ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'naio%' ORDER BY SCHEMA_NAME='naio' DESC limit 1
+
+2022/06/21 00:27:18 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:205
+[1.042ms] [rows:-] SELECT column_name, is_nullable, data_type, character_maximum_length, numeric_precision, numeric_scale FROM information_schema.columns WHERE table_schema = 'naio' AND table_name = 'role_permission' ORDER BY ORDINAL_POSITION
+
+2022/06/21 00:27:18 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:234
+[0.146ms] [rows:-] SELECT DATABASE()
+
+2022/06/21 00:27:18 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:237
+[0.650ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'naio%' ORDER BY SCHEMA_NAME='naio' DESC limit 1
+
+2022/06/21 00:27:18 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/bootstrap/database.go:66
+[0.949ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'naio' AND table_name = 'log' AND table_type = 'BASE TABLE'
+
+2022/06/21 00:27:18 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:234
+[0.177ms] [rows:-] SELECT DATABASE()
+
+2022/06/21 00:27:18 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:237
+[0.594ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'naio%' ORDER BY SCHEMA_NAME='naio' DESC limit 1
+
+2022/06/21 00:27:18 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:205
+[1.010ms] [rows:-] SELECT column_name, is_nullable, data_type, character_maximum_length, numeric_precision, numeric_scale FROM information_schema.columns WHERE table_schema = 'naio' AND table_name = 'log' ORDER BY ORDINAL_POSITION
+
+2022/06/21 00:27:18 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:234
+[0.196ms] [rows:-] SELECT DATABASE()
+
+2022/06/21 00:27:18 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:237
+[0.637ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'naio%' ORDER BY SCHEMA_NAME='naio' DESC limit 1
+
+2022/06/21 00:27:18 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/bootstrap/database.go:66
+[1.422ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'naio' AND table_name = 'department' AND table_type = 'BASE TABLE'
+
+2022/06/21 00:27:18 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:234
+[0.192ms] [rows:-] SELECT DATABASE()
+
+2022/06/21 00:27:18 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:237
+[0.686ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'naio%' ORDER BY SCHEMA_NAME='naio' DESC limit 1
+
+2022/06/21 00:27:18 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:205
+[1.248ms] [rows:-] SELECT column_name, is_nullable, data_type, character_maximum_length, numeric_precision, numeric_scale FROM information_schema.columns WHERE table_schema = 'naio' AND table_name = 'department' ORDER BY ORDINAL_POSITION
+
+2022/06/21 00:28:12 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/app/services/user.go:32
+[0.832ms] [rows:1] SELECT * FROM `user` WHERE username = 'admin' ORDER BY `user`.`id` LIMIT 1
+
+2022/06/21 00:28:12 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/app/services/user.go:43
+[1.823ms] [rows:17] select code from permission where id in (select permission_id from role_permission where role_id = (select role_id from user_role where user_id = 1))
+
+2022/06/21 00:28:12 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/app/services/user.go:46
+[0.873ms] [rows:1] SELECT * FROM `user` WHERE `user`.`id` = 1 ORDER BY `user`.`id` LIMIT 1
+
+2022/06/21 00:28:12 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/app/services/menu.go:23
+[0.757ms] [rows:4] select id,parent_id,path,url,name,label,icon,code from permission where type in (0,1) and id in (select permission_id from role_permission where role_id = (select role_id from user_role where user_id = 1))
+
+2022/06/21 00:33:12 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/app/services/user.go:43
+[0.762ms] [rows:17] select code from permission where id in (select permission_id from role_permission where role_id = (select role_id from user_role where user_id = 1))
+
+2022/06/21 00:33:12 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/app/services/user.go:46
+[0.615ms] [rows:1] SELECT * FROM `user` WHERE `user`.`id` = 1 ORDER BY `user`.`id` LIMIT 1
+
+2022/06/21 00:33:12 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/app/services/menu.go:23
+[1.071ms] [rows:4] select id,parent_id,path,url,name,label,icon,code from permission where type in (0,1) and id in (select permission_id from role_permission where role_id = (select role_id from user_role where user_id = 1))
+
+2022/06/21 00:39:45 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:234
+[1.632ms] [rows:-] SELECT DATABASE()
+
+2022/06/21 00:39:45 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:237
+[11.941ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'naio%' ORDER BY SCHEMA_NAME='naio' DESC limit 1
+
+2022/06/21 00:39:45 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/bootstrap/database.go:66
+[6.614ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'naio' AND table_name = 'user' AND table_type = 'BASE TABLE'
+
+2022/06/21 00:39:45 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:234
+[0.331ms] [rows:-] SELECT DATABASE()
+
+2022/06/21 00:39:45 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:237
+[0.911ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'naio%' ORDER BY SCHEMA_NAME='naio' DESC limit 1
+
+2022/06/21 00:39:45 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:205
+[3.046ms] [rows:-] SELECT column_name, is_nullable, data_type, character_maximum_length, numeric_precision, numeric_scale FROM information_schema.columns WHERE table_schema = 'naio' AND table_name = 'user' ORDER BY ORDINAL_POSITION
+
+2022/06/21 00:39:45 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:234
+[0.272ms] [rows:-] SELECT DATABASE()
+
+2022/06/21 00:39:45 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:237
+[0.801ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'naio%' ORDER BY SCHEMA_NAME='naio' DESC limit 1
+
+2022/06/21 00:39:45 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/bootstrap/database.go:66
+[1.225ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'naio' AND table_name = 'role' AND table_type = 'BASE TABLE'
+
+2022/06/21 00:39:45 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:234
+[0.169ms] [rows:-] SELECT DATABASE()
+
+2022/06/21 00:39:45 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:237
+[0.703ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'naio%' ORDER BY SCHEMA_NAME='naio' DESC limit 1
+
+2022/06/21 00:39:45 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:205
+[1.326ms] [rows:-] SELECT column_name, is_nullable, data_type, character_maximum_length, numeric_precision, numeric_scale FROM information_schema.columns WHERE table_schema = 'naio' AND table_name = 'role' ORDER BY ORDINAL_POSITION
+
+2022/06/21 00:39:45 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:234
+[0.227ms] [rows:-] SELECT DATABASE()
+
+2022/06/21 00:39:45 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:237
+[1.089ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'naio%' ORDER BY SCHEMA_NAME='naio' DESC limit 1
+
+2022/06/21 00:39:45 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/bootstrap/database.go:66
+[1.785ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'naio' AND table_name = 'permission' AND table_type = 'BASE TABLE'
+
+2022/06/21 00:39:45 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:234
+[0.200ms] [rows:-] SELECT DATABASE()
+
+2022/06/21 00:39:45 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:237
+[0.825ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'naio%' ORDER BY SCHEMA_NAME='naio' DESC limit 1
+
+2022/06/21 00:39:45 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:205
+[1.550ms] [rows:-] SELECT column_name, is_nullable, data_type, character_maximum_length, numeric_precision, numeric_scale FROM information_schema.columns WHERE table_schema = 'naio' AND table_name = 'permission' ORDER BY ORDINAL_POSITION
+
+2022/06/21 00:39:45 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:234
+[0.173ms] [rows:-] SELECT DATABASE()
+
+2022/06/21 00:39:45 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:237
+[0.735ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'naio%' ORDER BY SCHEMA_NAME='naio' DESC limit 1
+
+2022/06/21 00:39:45 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/bootstrap/database.go:66
+[1.070ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'naio' AND table_name = 'user_role' AND table_type = 'BASE TABLE'
+
+2022/06/21 00:39:45 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:234
+[0.135ms] [rows:-] SELECT DATABASE()
+
+2022/06/21 00:39:45 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:237
+[0.719ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'naio%' ORDER BY SCHEMA_NAME='naio' DESC limit 1
+
+2022/06/21 00:39:45 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:205
+[1.134ms] [rows:-] SELECT column_name, is_nullable, data_type, character_maximum_length, numeric_precision, numeric_scale FROM information_schema.columns WHERE table_schema = 'naio' AND table_name = 'user_role' ORDER BY ORDINAL_POSITION
+
+2022/06/21 00:39:45 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:234
+[0.179ms] [rows:-] SELECT DATABASE()
+
+2022/06/21 00:39:45 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:237
+[0.901ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'naio%' ORDER BY SCHEMA_NAME='naio' DESC limit 1
+
+2022/06/21 00:39:45 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/bootstrap/database.go:66
+[1.585ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'naio' AND table_name = 'role_permission' AND table_type = 'BASE TABLE'
+
+2022/06/21 00:39:45 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:234
+[0.215ms] [rows:-] SELECT DATABASE()
+
+2022/06/21 00:39:45 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:237
+[1.132ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'naio%' ORDER BY SCHEMA_NAME='naio' DESC limit 1
+
+2022/06/21 00:39:45 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:205
+[1.825ms] [rows:-] SELECT column_name, is_nullable, data_type, character_maximum_length, numeric_precision, numeric_scale FROM information_schema.columns WHERE table_schema = 'naio' AND table_name = 'role_permission' ORDER BY ORDINAL_POSITION
+
+2022/06/21 00:39:45 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:234
+[0.192ms] [rows:-] SELECT DATABASE()
+
+2022/06/21 00:39:45 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:237
+[1.042ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'naio%' ORDER BY SCHEMA_NAME='naio' DESC limit 1
+
+2022/06/21 00:39:45 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/bootstrap/database.go:66
+[1.449ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'naio' AND table_name = 'log' AND table_type = 'BASE TABLE'
+
+2022/06/21 00:39:45 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:234
+[0.252ms] [rows:-] SELECT DATABASE()
+
+2022/06/21 00:39:45 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:237
+[0.758ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'naio%' ORDER BY SCHEMA_NAME='naio' DESC limit 1
+
+2022/06/21 00:39:45 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:205
+[1.214ms] [rows:-] SELECT column_name, is_nullable, data_type, character_maximum_length, numeric_precision, numeric_scale FROM information_schema.columns WHERE table_schema = 'naio' AND table_name = 'log' ORDER BY ORDINAL_POSITION
+
+2022/06/21 00:39:45 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:234
+[0.140ms] [rows:-] SELECT DATABASE()
+
+2022/06/21 00:39:45 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:237
+[0.723ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'naio%' ORDER BY SCHEMA_NAME='naio' DESC limit 1
+
+2022/06/21 00:39:45 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/bootstrap/database.go:66
+[1.131ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'naio' AND table_name = 'department' AND table_type = 'BASE TABLE'
+
+2022/06/21 00:39:45 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:234
+[0.152ms] [rows:-] SELECT DATABASE()
+
+2022/06/21 00:39:45 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:237
+[0.661ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'naio%' ORDER BY SCHEMA_NAME='naio' DESC limit 1
+
+2022/06/21 00:39:45 /Users/zouxiaojie/go/pkg/mod/gorm.io/driver/mysql@v1.2.3/migrator.go:205
+[1.282ms] [rows:-] SELECT column_name, is_nullable, data_type, character_maximum_length, numeric_precision, numeric_scale FROM information_schema.columns WHERE table_schema = 'naio' AND table_name = 'department' ORDER BY ORDINAL_POSITION
+
+2022/06/21 00:39:50 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/app/services/user.go:32
+[4.981ms] [rows:1] SELECT * FROM `user` WHERE username = 'admin' ORDER BY `user`.`id` LIMIT 1
+
+2022/06/21 00:39:50 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/app/services/user.go:43
+[9.068ms] [rows:17] select code from permission where id in (select permission_id from role_permission where role_id = (select role_id from user_role where user_id = 1))
+
+2022/06/21 00:39:50 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/app/services/user.go:46
+[0.901ms] [rows:1] SELECT * FROM `user` WHERE `user`.`id` = 1 ORDER BY `user`.`id` LIMIT 1
+
+2022/06/21 00:39:50 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/app/services/menu.go:23
+[0.952ms] [rows:4] select id,parent_id,path,url,name,label,icon,code from permission where type in (0,1) and id in (select permission_id from role_permission where role_id = (select role_id from user_role where user_id = 1))
+
+2022/06/21 00:41:16 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/app/services/user.go:43
+[1.049ms] [rows:17] select code from permission where id in (select permission_id from role_permission where role_id = (select role_id from user_role where user_id = 1))
+
+2022/06/21 00:41:16 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/app/services/user.go:46
+[0.791ms] [rows:1] SELECT * FROM `user` WHERE `user`.`id` = 1 ORDER BY `user`.`id` LIMIT 1
+
+2022/06/21 00:41:16 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/app/services/menu.go:23
+[2.205ms] [rows:4] select id,parent_id,path,url,name,label,icon,code from permission where type in (0,1) and id in (select permission_id from role_permission where role_id = (select role_id from user_role where user_id = 1))
+
+2022/06/21 00:41:33 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/app/services/user.go:43
+[1.402ms] [rows:17] select code from permission where id in (select permission_id from role_permission where role_id = (select role_id from user_role where user_id = 1))
+
+2022/06/21 00:41:33 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/app/services/user.go:46
+[0.766ms] [rows:1] SELECT * FROM `user` WHERE `user`.`id` = 1 ORDER BY `user`.`id` LIMIT 1
+
+2022/06/21 00:41:33 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/app/services/menu.go:23
+[1.178ms] [rows:4] select id,parent_id,path,url,name,label,icon,code from permission where type in (0,1) and id in (select permission_id from role_permission where role_id = (select role_id from user_role where user_id = 1))
+
+2022/06/21 00:56:17 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/app/services/user.go:32
+[3.785ms] [rows:1] SELECT * FROM `user` WHERE username = 'admin' ORDER BY `user`.`id` LIMIT 1
+
+2022/06/21 00:56:17 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/app/services/user.go:43
+[1.973ms] [rows:17] select code from permission where id in (select permission_id from role_permission where role_id = (select role_id from user_role where user_id = 1))
+
+2022/06/21 00:56:17 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/app/services/user.go:46
+[0.654ms] [rows:1] SELECT * FROM `user` WHERE `user`.`id` = 1 ORDER BY `user`.`id` LIMIT 1
+
+2022/06/21 00:56:17 /Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/app/services/menu.go:23
+[5.083ms] [rows:4] select id,parent_id,path,url,name,label,icon,code from permission where type in (0,1) and id in (select permission_id from role_permission where role_id = (select role_id from user_role where user_id = 1))
