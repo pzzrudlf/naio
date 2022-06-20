@@ -29,7 +29,7 @@ func SetApiGroupRoutes(router *gin.RouterGroup) {
 		jwtRouter.PUT("/admin", app.UpdateAdmin)
 		//删除--管理员信息
 		// jwtRouter.DELETE("/admin", middleware.CheckPermission(), app.DeleteAdmin)
-		jwtRouter.DELETE("/admin", app.DeleteAdmin)
+		jwtRouter.DELETE("/admin/:id", app.DeleteAdmin)
 
 		//角色--列表
 		// jwtRouter.GET("/role/list", middleware.CheckPermission(), app.GetRoleList)
@@ -42,7 +42,7 @@ func SetApiGroupRoutes(router *gin.RouterGroup) {
 		jwtRouter.PUT("/role", app.UpdateRole)
 		//删除--角色
 		// jwtRouter.DELETE("/role", middleware.CheckPermission(), app.DeleteRole)
-		jwtRouter.DELETE("/role", app.DeleteRole)
+		jwtRouter.DELETE("/role/:id", app.DeleteRole)
 
 		//菜单--列表
 		// jwtRouter.GET("/menu/list", middleware.CheckPermission(), app.GetMenuList)
