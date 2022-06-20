@@ -23,8 +23,8 @@ type MetaDao struct {
 }
 
 type AuthMenuDao struct {
-	Id        uint           `json:"id"`
-	ParentId  uint           `json:"parent_id"`
+	Id        uint           `json:"-"`
+	ParentId  uint           `json:"-"`
 	Path      string         `json:"path"`
 	Component string         `json:"component"`
 	Name      string         `json:"name"`

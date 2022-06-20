@@ -1,7 +1,6 @@
 package middleware
 
 import (
-	"fmt"
 	"naio/app/common/response"
 	"naio/app/services"
 	"naio/global"
@@ -34,8 +33,6 @@ func JWTAuth(GuardName string) gin.HandlerFunc {
 		}
 
 		claims := token.Claims.(*services.CustomClaims)
-
-		fmt.Println("middleware/jwt.go<==>claims.Username::", claims.Username)
 
 		// Token 发布者校验
 		if claims.Issuer != GuardName {

@@ -2,7 +2,6 @@ package services
 
 import (
 	"errors"
-	"fmt"
 	"naio/app/common/request"
 	"naio/app/models"
 	"naio/global"
@@ -56,7 +55,6 @@ func (userService *userService) GetUserInfo(userId string) (userInfo params.Auth
 
 	var roles []string
 	for _, v := range permissions {
-		fmt.Println(v.Code)
 		roles = append(roles, v.Code)
 	}
 	
