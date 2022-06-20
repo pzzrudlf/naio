@@ -28,7 +28,7 @@ func SetApiGroupRoutes(router *gin.RouterGroup) {
 		// jwtRouter.PUT("/admin", middleware.CheckPermission(), app.UpdateAdmin)
 		jwtRouter.PUT("/admin", app.UpdateAdmin)
 		//删除--管理员信息
-		// jwtRouter.DELETE("/admin", middleware.CheckPermission(), app.DeleteAdmin)
+		// jwtRouter.DELETE("/admin/:id", middleware.CheckPermission(), app.DeleteAdmin)
 		jwtRouter.DELETE("/admin/:id", app.DeleteAdmin)
 
 		//角色--列表
@@ -41,21 +41,21 @@ func SetApiGroupRoutes(router *gin.RouterGroup) {
 		// jwtRouter.PUT("/role", middleware.CheckPermission(), app.UpdateRole)
 		jwtRouter.PUT("/role", app.UpdateRole)
 		//删除--角色
-		// jwtRouter.DELETE("/role", middleware.CheckPermission(), app.DeleteRole)
+		// jwtRouter.DELETE("/role/:id", middleware.CheckPermission(), app.DeleteRole)
 		jwtRouter.DELETE("/role/:id", app.DeleteRole)
 
 		//菜单--列表
-		// jwtRouter.GET("/menu/list", middleware.CheckPermission(), app.GetMenuList)
-		jwtRouter.GET("/menu/list", app.GetMenuList)
+		jwtRouter.GET("/menu/list", middleware.CheckPermission(), app.GetMenuList)
+		// jwtRouter.GET("/menu/list", app.GetMenuList)
 		//创建--菜单
-		// jwtRouter.POST("/menu", middleware.CheckPermission(), app.CreateMenu)
-		jwtRouter.POST("/menu", app.CreateMenu)
+		jwtRouter.POST("/menu", middleware.CheckPermission(), app.CreateMenu)
+		// jwtRouter.POST("/menu", app.CreateMenu)
 		//更新--菜单
-		// jwtRouter.PUT("/menu", middleware.CheckPermission(), app.UpdateMenu)
-		jwtRouter.PUT("/menu", app.UpdateMenu)
+		jwtRouter.PUT("/menu", middleware.CheckPermission(), app.UpdateMenu)
+		// jwtRouter.PUT("/menu", app.UpdateMenu)
 		//删除--菜单
-		// jwtRouter.DELETE("/menu/:id", middleware.CheckPermission(), app.DeleteMenu)
-		jwtRouter.DELETE("/menu/:id", app.DeleteMenu)
+		jwtRouter.DELETE("/menu/:id", middleware.CheckPermission(), app.DeleteMenu)
+		// jwtRouter.DELETE("/menu/:id", app.DeleteMenu)
 
 
 		jwtRouter.POST("/image_upload", common.ImageUpload)

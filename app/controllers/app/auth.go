@@ -1,12 +1,13 @@
 package app
 
 import (
-	"github.com/gin-gonic/gin"
-	"github.com/golang-jwt/jwt"
 	"naio/app/common/request"
 	"naio/app/common/response"
 	"naio/app/services"
 	"net/http"
+
+	"github.com/gin-gonic/gin"
+	"github.com/golang-jwt/jwt"
 )
 
 func Register(c *gin.Context) {
@@ -60,21 +61,21 @@ func Login(c *gin.Context) {
 }
 
 func GetAuthInfo(c *gin.Context) {
-	user, err := services.UserService.GetUserInfo(c.Keys["id"].(string))
+	userInfo, err := services.UserService.GetUserInfo(c.Keys["id"].(string))
 	if err != nil {
 		response.BusinessFail(c, err.Error())
 		return
 	}
-	response.Success(c, user)
+	response.Success(c, userInfo)
 }
 
 func GetAuthMenu(c *gin.Context) {
-	menu, err := services.MenuService.GetMenuListByUserId(c.Keys["id"].(string))
+	menuInfo, err := services.MenuService.GetMenuListByUserId(c.Keys["id"].(string))
 	if err != nil {
 		response.BusinessFail(c, err.Error())
 		return
 	}
-	response.Success(c, menu)
+	response.Success(c, menuInfo)
 }
 
 func Logout(c *gin.Context) {

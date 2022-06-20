@@ -1,0 +1,560 @@
+
+
+[31m2022/06/20 19:37:49 [Recovery] 2022/06/20 - 19:37:49 panic recovered:
+GET /api/auth/menu HTTP/1.1
+Host: localhost:8088
+Accept: */*
+Accept-Encoding: gzip, deflate, br
+Authorization: *
+Cache-Control: no-cache
+Connection: keep-alive
+Postman-Token: 41ae33b6-0283-4a11-b6c1-4cf759a196a2
+User-Agent: PostmanRuntime/7.29.0
+
+
+runtime error: index out of range [1] with length 1
+/usr/local/go/src/runtime/panic.go:89 (0x1032c1e)
+	goPanicIndex: panic(boundsError{x: int64(x), signed: true, y: y, code: boundsIndex})
+/Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/utils/tree.go:13 (0x186df51)
+	Tree: if(data[i].Id == v.ParentId){
+/Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/app/services/menu.go:41 (0x186dce9)
+	(*menuService).GetMenuListByUserId: return utils.Tree(menuInfo), nil
+/Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/app/controllers/app/auth.go:73 (0x1870985)
+	GetAuthMenu: menuInfo, err := services.MenuService.GetMenuListByUserId(c.Keys["id"].(string))
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/context.go:168 (0x186fa0f)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/middleware/jwt.go:66 (0x186f970)
+	JWTAuth.func1: c.Next() // 后续的处理函数可以用过c.Get("token")来获取当前请求的用户token
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/context.go:168 (0x185bdc1)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/recovery.go:99 (0x185bdac)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/context.go:168 (0x186f2e6)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/middleware/cors.go:43 (0x186f2ca)
+	Cors.func1: c.Next() //  处理请求
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/context.go:168 (0x185bdc1)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/recovery.go:99 (0x185bdac)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/context.go:168 (0x185aee6)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/logger.go:241 (0x185aec9)
+	LoggerWithConfig.func1: c.Next()
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/context.go:168 (0x1859fb0)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/gin.go:555 (0x1859c18)
+	(*Engine).handleHTTPRequest: c.Next()
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/gin.go:511 (0x1859751)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+/usr/local/go/src/net/http/server.go:2916 (0x12cdc1a)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+/usr/local/go/src/net/http/server.go:1966 (0x12c8c16)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+/usr/local/go/src/runtime/asm_amd64.s:1571 (0x1065840)
+	goexit: BYTE	$0x90	// NOP
+[0m
+
+
+[31m2022/06/20 19:40:44 [Recovery] 2022/06/20 - 19:40:44 panic recovered:
+GET /api/auth/menu HTTP/1.1
+Host: localhost:8088
+Accept: */*
+Accept-Encoding: gzip, deflate, br
+Authorization: *
+Cache-Control: no-cache
+Connection: keep-alive
+Postman-Token: 35caf723-315b-4d5a-a7c7-04ca5b3e3264
+User-Agent: PostmanRuntime/7.29.0
+
+
+runtime error: index out of range [1] with length 1
+/usr/local/go/src/runtime/panic.go:89 (0x1032c1e)
+	goPanicIndex: panic(boundsError{x: int64(x), signed: true, y: y, code: boundsIndex})
+/Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/utils/tree.go:17 (0x1682bd7)
+	Tree: if(data[i].Id == list[i].ParentId){
+/Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/app/services/menu.go:41 (0x186dea9)
+	(*menuService).GetMenuListByUserId: return utils.Tree(menuInfo), nil
+/Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/app/controllers/app/auth.go:73 (0x1870a25)
+	GetAuthMenu: menuInfo, err := services.MenuService.GetMenuListByUserId(c.Keys["id"].(string))
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/context.go:168 (0x186faaf)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/middleware/jwt.go:66 (0x186fa10)
+	JWTAuth.func1: c.Next() // 后续的处理函数可以用过c.Get("token")来获取当前请求的用户token
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/context.go:168 (0x185c221)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/recovery.go:99 (0x185c20c)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/context.go:168 (0x186f386)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/middleware/cors.go:43 (0x186f36a)
+	Cors.func1: c.Next() //  处理请求
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/context.go:168 (0x185c221)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/recovery.go:99 (0x185c20c)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/context.go:168 (0x185b346)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/logger.go:241 (0x185b329)
+	LoggerWithConfig.func1: c.Next()
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/context.go:168 (0x185a410)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/gin.go:555 (0x185a078)
+	(*Engine).handleHTTPRequest: c.Next()
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/gin.go:511 (0x1859bb1)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+/usr/local/go/src/net/http/server.go:2916 (0x12cdc1a)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+/usr/local/go/src/net/http/server.go:1966 (0x12c8c16)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+/usr/local/go/src/runtime/asm_amd64.s:1571 (0x1065840)
+	goexit: BYTE	$0x90	// NOP
+[0m
+
+
+[31m2022/06/20 19:54:30 [Recovery] 2022/06/20 - 19:54:30 panic recovered:
+GET /api/auth/menu HTTP/1.1
+Host: localhost:8088
+Accept: */*
+Accept-Encoding: gzip, deflate, br
+Authorization: *
+Cache-Control: no-cache
+Connection: keep-alive
+Postman-Token: 14a799ba-72e7-400c-9baa-251c80daa952
+User-Agent: PostmanRuntime/7.29.0
+
+
+runtime error: invalid memory address or nil pointer dereference
+/usr/local/go/src/runtime/panic.go:220 (0x104aa35)
+	panicmem: panic(memoryError)
+/usr/local/go/src/runtime/signal_unix.go:818 (0x104aa05)
+	sigpanic: panicmem()
+/Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/app/services/menu.go:24 (0x186ddc3)
+	(*menuService).GetMenuListByUserId: menuItem.Id = item.ID.ID
+/Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/app/controllers/app/auth.go:73 (0x1870985)
+	GetAuthMenu: menuInfo, err := services.MenuService.GetMenuListByUserId(c.Keys["id"].(string))
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/context.go:168 (0x186fa0f)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/middleware/jwt.go:66 (0x186f970)
+	JWTAuth.func1: c.Next() // 后续的处理函数可以用过c.Get("token")来获取当前请求的用户token
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/context.go:168 (0x185c101)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/recovery.go:99 (0x185c0ec)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/context.go:168 (0x186f2e6)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/middleware/cors.go:43 (0x186f2ca)
+	Cors.func1: c.Next() //  处理请求
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/context.go:168 (0x185c101)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/recovery.go:99 (0x185c0ec)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/context.go:168 (0x185b226)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/logger.go:241 (0x185b209)
+	LoggerWithConfig.func1: c.Next()
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/context.go:168 (0x185a2f0)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/gin.go:555 (0x1859f58)
+	(*Engine).handleHTTPRequest: c.Next()
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/gin.go:511 (0x1859a91)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+/usr/local/go/src/net/http/server.go:2916 (0x12cdc1a)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+/usr/local/go/src/net/http/server.go:1966 (0x12c8c16)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+/usr/local/go/src/runtime/asm_amd64.s:1571 (0x1065840)
+	goexit: BYTE	$0x90	// NOP
+[0m
+
+
+[31m2022/06/20 19:54:33 [Recovery] 2022/06/20 - 19:54:33 panic recovered:
+GET /api/auth/menu HTTP/1.1
+Host: localhost:8088
+Accept: */*
+Accept-Encoding: gzip, deflate, br
+Authorization: *
+Cache-Control: no-cache
+Connection: keep-alive
+Postman-Token: 7f14d263-7724-49a2-8cf4-63cc578806f7
+User-Agent: PostmanRuntime/7.29.0
+
+
+runtime error: invalid memory address or nil pointer dereference
+/usr/local/go/src/runtime/panic.go:220 (0x104aa35)
+	panicmem: panic(memoryError)
+/usr/local/go/src/runtime/signal_unix.go:818 (0x104aa05)
+	sigpanic: panicmem()
+/Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/app/services/menu.go:24 (0x186ddc3)
+	(*menuService).GetMenuListByUserId: menuItem.Id = item.ID.ID
+/Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/app/controllers/app/auth.go:73 (0x1870985)
+	GetAuthMenu: menuInfo, err := services.MenuService.GetMenuListByUserId(c.Keys["id"].(string))
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/context.go:168 (0x186fa0f)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/middleware/jwt.go:66 (0x186f970)
+	JWTAuth.func1: c.Next() // 后续的处理函数可以用过c.Get("token")来获取当前请求的用户token
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/context.go:168 (0x185c101)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/recovery.go:99 (0x185c0ec)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/context.go:168 (0x186f2e6)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/middleware/cors.go:43 (0x186f2ca)
+	Cors.func1: c.Next() //  处理请求
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/context.go:168 (0x185c101)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/recovery.go:99 (0x185c0ec)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/context.go:168 (0x185b226)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/logger.go:241 (0x185b209)
+	LoggerWithConfig.func1: c.Next()
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/context.go:168 (0x185a2f0)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/gin.go:555 (0x1859f58)
+	(*Engine).handleHTTPRequest: c.Next()
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/gin.go:511 (0x1859a91)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+/usr/local/go/src/net/http/server.go:2916 (0x12cdc1a)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+/usr/local/go/src/net/http/server.go:1966 (0x12c8c16)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+/usr/local/go/src/runtime/asm_amd64.s:1571 (0x1065840)
+	goexit: BYTE	$0x90	// NOP
+[0m
+
+
+[31m2022/06/20 19:55:37 [Recovery] 2022/06/20 - 19:55:37 panic recovered:
+GET /api/auth/menu HTTP/1.1
+Host: localhost:8088
+Accept: */*
+Accept-Encoding: gzip, deflate, br
+Authorization: *
+Cache-Control: no-cache
+Connection: keep-alive
+Postman-Token: 6bcb1a95-f737-4773-a206-0b32aaa46cff
+User-Agent: PostmanRuntime/7.29.0
+
+
+runtime error: invalid memory address or nil pointer dereference
+/usr/local/go/src/runtime/panic.go:220 (0x104aa35)
+	panicmem: panic(memoryError)
+/usr/local/go/src/runtime/signal_unix.go:818 (0x104aa05)
+	sigpanic: panicmem()
+/Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/app/services/menu.go:25 (0x186de3e)
+	(*menuService).GetMenuListByUserId: menuItem.Id = item.ID.ID
+/Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/app/controllers/app/auth.go:73 (0x1870a05)
+	GetAuthMenu: menuInfo, err := services.MenuService.GetMenuListByUserId(c.Keys["id"].(string))
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/context.go:168 (0x186fa8f)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/middleware/jwt.go:66 (0x186f9f0)
+	JWTAuth.func1: c.Next() // 后续的处理函数可以用过c.Get("token")来获取当前请求的用户token
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/context.go:168 (0x185c101)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/recovery.go:99 (0x185c0ec)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/context.go:168 (0x186f366)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/middleware/cors.go:43 (0x186f34a)
+	Cors.func1: c.Next() //  处理请求
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/context.go:168 (0x185c101)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/recovery.go:99 (0x185c0ec)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/context.go:168 (0x185b226)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/logger.go:241 (0x185b209)
+	LoggerWithConfig.func1: c.Next()
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/context.go:168 (0x185a2f0)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/gin.go:555 (0x1859f58)
+	(*Engine).handleHTTPRequest: c.Next()
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/gin.go:511 (0x1859a91)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+/usr/local/go/src/net/http/server.go:2916 (0x12cdc1a)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+/usr/local/go/src/net/http/server.go:1966 (0x12c8c16)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+/usr/local/go/src/runtime/asm_amd64.s:1571 (0x1065840)
+	goexit: BYTE	$0x90	// NOP
+[0m
+
+
+[31m2022/06/20 19:56:39 [Recovery] 2022/06/20 - 19:56:39 panic recovered:
+GET /api/auth/menu HTTP/1.1
+Host: localhost:8088
+Accept: */*
+Accept-Encoding: gzip, deflate, br
+Authorization: *
+Cache-Control: no-cache
+Connection: keep-alive
+Postman-Token: 27014709-9e75-499b-a83e-3d8cfb20c9f1
+User-Agent: PostmanRuntime/7.29.0
+
+
+runtime error: invalid memory address or nil pointer dereference
+/usr/local/go/src/runtime/panic.go:220 (0x104aa35)
+	panicmem: panic(memoryError)
+/usr/local/go/src/runtime/signal_unix.go:818 (0x104aa05)
+	sigpanic: panicmem()
+/Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/app/services/menu.go:25 (0x186dea5)
+	(*menuService).GetMenuListByUserId: menuItem.Id = item.ID.ID
+/Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/app/controllers/app/auth.go:73 (0x1870a65)
+	GetAuthMenu: menuInfo, err := services.MenuService.GetMenuListByUserId(c.Keys["id"].(string))
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/context.go:168 (0x186faef)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/middleware/jwt.go:66 (0x186fa50)
+	JWTAuth.func1: c.Next() // 后续的处理函数可以用过c.Get("token")来获取当前请求的用户token
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/context.go:168 (0x185c101)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/recovery.go:99 (0x185c0ec)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/context.go:168 (0x186f3c6)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/middleware/cors.go:43 (0x186f3aa)
+	Cors.func1: c.Next() //  处理请求
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/context.go:168 (0x185c101)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/recovery.go:99 (0x185c0ec)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/context.go:168 (0x185b226)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/logger.go:241 (0x185b209)
+	LoggerWithConfig.func1: c.Next()
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/context.go:168 (0x185a2f0)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/gin.go:555 (0x1859f58)
+	(*Engine).handleHTTPRequest: c.Next()
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/gin.go:511 (0x1859a91)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+/usr/local/go/src/net/http/server.go:2916 (0x12cdc1a)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+/usr/local/go/src/net/http/server.go:1966 (0x12c8c16)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+/usr/local/go/src/runtime/asm_amd64.s:1571 (0x1065840)
+	goexit: BYTE	$0x90	// NOP
+[0m
+
+
+[31m2022/06/20 20:01:36 [Recovery] 2022/06/20 - 20:01:36 panic recovered:
+GET /api/auth/menu HTTP/1.1
+Host: localhost:8088
+Accept: */*
+Accept-Encoding: gzip, deflate, br
+Authorization: *
+Cache-Control: no-cache
+Connection: keep-alive
+Postman-Token: f60c2f63-176e-4400-bade-e9d2fbe46531
+User-Agent: PostmanRuntime/7.29.0
+
+
+runtime error: invalid memory address or nil pointer dereference
+/usr/local/go/src/runtime/panic.go:220 (0x104aa35)
+	panicmem: panic(memoryError)
+/usr/local/go/src/runtime/signal_unix.go:818 (0x104aa05)
+	sigpanic: panicmem()
+/Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/app/services/menu.go:25 (0x186dec5)
+	(*menuService).GetMenuListByUserId: menuItem.Id = item.ID.ID
+/Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/app/controllers/app/auth.go:73 (0x1870a85)
+	GetAuthMenu: menuInfo, err := services.MenuService.GetMenuListByUserId(c.Keys["id"].(string))
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/context.go:168 (0x186fb0f)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/middleware/jwt.go:66 (0x186fa70)
+	JWTAuth.func1: c.Next() // 后续的处理函数可以用过c.Get("token")来获取当前请求的用户token
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/context.go:168 (0x185c121)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/recovery.go:99 (0x185c10c)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/context.go:168 (0x186f3e6)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/middleware/cors.go:43 (0x186f3ca)
+	Cors.func1: c.Next() //  处理请求
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/context.go:168 (0x185c121)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/recovery.go:99 (0x185c10c)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/context.go:168 (0x185b246)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/logger.go:241 (0x185b229)
+	LoggerWithConfig.func1: c.Next()
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/context.go:168 (0x185a310)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/gin.go:555 (0x1859f78)
+	(*Engine).handleHTTPRequest: c.Next()
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/gin.go:511 (0x1859ab1)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+/usr/local/go/src/net/http/server.go:2916 (0x12cdc1a)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+/usr/local/go/src/net/http/server.go:1966 (0x12c8c16)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+/usr/local/go/src/runtime/asm_amd64.s:1571 (0x1065840)
+	goexit: BYTE	$0x90	// NOP
+[0m
+
+
+[31m2022/06/20 20:01:37 [Recovery] 2022/06/20 - 20:01:37 panic recovered:
+GET /api/auth/menu HTTP/1.1
+Host: localhost:8088
+Accept: */*
+Accept-Encoding: gzip, deflate, br
+Authorization: *
+Cache-Control: no-cache
+Connection: keep-alive
+Postman-Token: b47acb50-f821-47c6-8187-caa07dde0966
+User-Agent: PostmanRuntime/7.29.0
+
+
+runtime error: invalid memory address or nil pointer dereference
+/usr/local/go/src/runtime/panic.go:220 (0x104aa35)
+	panicmem: panic(memoryError)
+/usr/local/go/src/runtime/signal_unix.go:818 (0x104aa05)
+	sigpanic: panicmem()
+/Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/app/services/menu.go:25 (0x186dec5)
+	(*menuService).GetMenuListByUserId: menuItem.Id = item.ID.ID
+/Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/app/controllers/app/auth.go:73 (0x1870a85)
+	GetAuthMenu: menuInfo, err := services.MenuService.GetMenuListByUserId(c.Keys["id"].(string))
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/context.go:168 (0x186fb0f)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/middleware/jwt.go:66 (0x186fa70)
+	JWTAuth.func1: c.Next() // 后续的处理函数可以用过c.Get("token")来获取当前请求的用户token
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/context.go:168 (0x185c121)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/recovery.go:99 (0x185c10c)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/context.go:168 (0x186f3e6)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/middleware/cors.go:43 (0x186f3ca)
+	Cors.func1: c.Next() //  处理请求
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/context.go:168 (0x185c121)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/recovery.go:99 (0x185c10c)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/context.go:168 (0x185b246)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/logger.go:241 (0x185b229)
+	LoggerWithConfig.func1: c.Next()
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/context.go:168 (0x185a310)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/gin.go:555 (0x1859f78)
+	(*Engine).handleHTTPRequest: c.Next()
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/gin.go:511 (0x1859ab1)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+/usr/local/go/src/net/http/server.go:2916 (0x12cdc1a)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+/usr/local/go/src/net/http/server.go:1966 (0x12c8c16)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+/usr/local/go/src/runtime/asm_amd64.s:1571 (0x1065840)
+	goexit: BYTE	$0x90	// NOP
+[0m
+
+
+[31m2022/06/20 20:03:19 [Recovery] 2022/06/20 - 20:03:19 panic recovered:
+GET /api/auth/menu HTTP/1.1
+Host: localhost:8088
+Accept: */*
+Accept-Encoding: gzip, deflate, br
+Authorization: *
+Cache-Control: no-cache
+Connection: keep-alive
+Postman-Token: 47fea8ca-de98-4392-b755-368e0175c014
+User-Agent: PostmanRuntime/7.29.0
+
+
+runtime error: invalid memory address or nil pointer dereference
+/usr/local/go/src/runtime/panic.go:220 (0x104aa35)
+	panicmem: panic(memoryError)
+/usr/local/go/src/runtime/signal_unix.go:818 (0x104aa05)
+	sigpanic: panicmem()
+/Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/app/services/menu.go:24 (0x186da7e)
+	(*menuService).GetMenuListByUserId: menuItem.Id = item.ID.ID
+/Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/app/controllers/app/auth.go:73 (0x1870625)
+	GetAuthMenu: menuInfo, err := services.MenuService.GetMenuListByUserId(c.Keys["id"].(string))
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/context.go:168 (0x186f6af)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/middleware/jwt.go:66 (0x186f610)
+	JWTAuth.func1: c.Next() // 后续的处理函数可以用过c.Get("token")来获取当前请求的用户token
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/context.go:168 (0x185bdc1)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/recovery.go:99 (0x185bdac)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/context.go:168 (0x186ef86)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/middleware/cors.go:43 (0x186ef6a)
+	Cors.func1: c.Next() //  处理请求
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/context.go:168 (0x185bdc1)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/recovery.go:99 (0x185bdac)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/context.go:168 (0x185aee6)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/logger.go:241 (0x185aec9)
+	LoggerWithConfig.func1: c.Next()
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/context.go:168 (0x1859fb0)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/gin.go:555 (0x1859c18)
+	(*Engine).handleHTTPRequest: c.Next()
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/gin.go:511 (0x1859751)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+/usr/local/go/src/net/http/server.go:2916 (0x12cdc1a)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+/usr/local/go/src/net/http/server.go:1966 (0x12c8c16)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+/usr/local/go/src/runtime/asm_amd64.s:1571 (0x1065840)
+	goexit: BYTE	$0x90	// NOP
+[0m
+
+
+[31m2022/06/20 20:03:20 [Recovery] 2022/06/20 - 20:03:20 panic recovered:
+GET /api/auth/menu HTTP/1.1
+Host: localhost:8088
+Accept: */*
+Accept-Encoding: gzip, deflate, br
+Authorization: *
+Cache-Control: no-cache
+Connection: keep-alive
+Postman-Token: c01af7d5-1beb-49f8-8820-bc9458b4f32a
+User-Agent: PostmanRuntime/7.29.0
+
+
+runtime error: invalid memory address or nil pointer dereference
+/usr/local/go/src/runtime/panic.go:220 (0x104aa35)
+	panicmem: panic(memoryError)
+/usr/local/go/src/runtime/signal_unix.go:818 (0x104aa05)
+	sigpanic: panicmem()
+/Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/app/services/menu.go:24 (0x186da7e)
+	(*menuService).GetMenuListByUserId: menuItem.Id = item.ID.ID
+/Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/app/controllers/app/auth.go:73 (0x1870625)
+	GetAuthMenu: menuInfo, err := services.MenuService.GetMenuListByUserId(c.Keys["id"].(string))
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/context.go:168 (0x186f6af)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/middleware/jwt.go:66 (0x186f610)
+	JWTAuth.func1: c.Next() // 后续的处理函数可以用过c.Get("token")来获取当前请求的用户token
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/context.go:168 (0x185bdc1)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/recovery.go:99 (0x185bdac)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/context.go:168 (0x186ef86)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/zouxiaojie/go/src/github.com/pzzrudlf/naio/middleware/cors.go:43 (0x186ef6a)
+	Cors.func1: c.Next() //  处理请求
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/context.go:168 (0x185bdc1)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/recovery.go:99 (0x185bdac)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/context.go:168 (0x185aee6)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/logger.go:241 (0x185aec9)
+	LoggerWithConfig.func1: c.Next()
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/context.go:168 (0x1859fb0)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/gin.go:555 (0x1859c18)
+	(*Engine).handleHTTPRequest: c.Next()
+/Users/zouxiaojie/go/pkg/mod/github.com/gin-gonic/gin@v1.7.7/gin.go:511 (0x1859751)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+/usr/local/go/src/net/http/server.go:2916 (0x12cdc1a)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+/usr/local/go/src/net/http/server.go:1966 (0x12c8c16)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+/usr/local/go/src/runtime/asm_amd64.s:1571 (0x1065840)
+	goexit: BYTE	$0x90	// NOP
+[0m

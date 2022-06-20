@@ -8,6 +8,7 @@ import (
 	"naio/global"
 	"naio/utils"
 	"strconv"
+	"naio/app/common/params"
 )
 
 type userService struct {
@@ -37,17 +38,28 @@ func (userService *userService) Login(params request.Login) (user *models.User, 
 }
 
 // GetUserInfo 获取用户信息
-func (userService *userService) GetUserInfo(userid string) (user models.User, err error) {
-	intId, _ := strconv.Atoi(userid)
+func (userService *userService) GetUserInfo(userId string) (userInfo params.AuthInfoDao, err error) {
+	intId, _ := strconv.Atoi(userId)
 	var permissions []models.Permission
+	global.App.DB.Raw("select code from permission where id in (select permission_id from role_permission where role_id = (select role_id from user_role where user_id = ?))", intId).Scan(&permissions)
 
-	global.App.DB.Raw("select code from sys_permission where id in (select permission_id from sys_role_permission where role_id = (select role_id from sys_user_role where user_id = ?))", intId).Scan(&permissions)
-
-	fmt.Println(permissions)
-
+	var user models.User
 	err = global.App.DB.First(&user, intId).Error
 	if err != nil {
 		err = errors.New("数据不存在")
 	}
+
+	userInfo.ID = strconv.Itoa(int(user.ID.ID))
+	userInfo.Name = user.Username
+	userInfo.Avatar = ""
+	userInfo.Introduction = ""
+
+	var roles []string
+	for _, v := range permissions {
+		fmt.Println(v.Code)
+		roles = append(roles, v.Code)
+	}
+	
+	userInfo.Roles = roles
 	return
 }
