@@ -12,7 +12,6 @@ import (
 func SetApiGroupRoutes(router *gin.RouterGroup) {
 	router.POST("/register", app.Register)
 	router.POST("/login", app.Login)
-	// 路由分组
 	jwtRouter := router.Use(middleware.JWTAuth(services.AppGuardName))
 	{
 		//jwtRouter.GET("/auth/info", middleware.CheckPermission(), app.GetAuthInfo)
@@ -20,22 +19,44 @@ func SetApiGroupRoutes(router *gin.RouterGroup) {
 		jwtRouter.GET("/auth/menu", app.GetAuthMenu)
 
 		//管理员信息--列表
+		// jwtRouter.GET("/admin/list", middleware.CheckPermission(), app.GetAdminList)
+		jwtRouter.GET("/admin/list", app.GetAdminList)
 		//创建--管理员信息
-		//查看--管理员信息
+		// jwtRouter.POST("/admin", middleware.CheckPermission(), app.CreateAdmin)
+		jwtRouter.POST("/admin", app.CreateAdmin)
 		//更新--管理员信息
+		// jwtRouter.PUT("/admin", middleware.CheckPermission(), app.UpdateAdmin)
+		jwtRouter.PUT("/admin", app.UpdateAdmin)
 		//删除--管理员信息
+		// jwtRouter.DELETE("/admin", middleware.CheckPermission(), app.DeleteAdmin)
+		jwtRouter.DELETE("/admin", app.DeleteAdmin)
 
 		//角色--列表
+		// jwtRouter.GET("/role/list", middleware.CheckPermission(), app.GetRoleList)
+		jwtRouter.GET("/role/list", app.GetRoleList)
 		//创建--角色
-		//查看--角色
+		// jwtRouter.POST("/role", middleware.CheckPermission(), app.CreateRole)
+		jwtRouter.POST("/role", app.CreateRole)
 		//更新--角色
+		// jwtRouter.PUT("/role", middleware.CheckPermission(), app.UpdateRole)
+		jwtRouter.PUT("/role", app.UpdateRole)
 		//删除--角色
+		// jwtRouter.DELETE("/role", middleware.CheckPermission(), app.DeleteRole)
+		jwtRouter.DELETE("/role", app.DeleteRole)
 
 		//菜单--列表
+		// jwtRouter.GET("/menu/list", middleware.CheckPermission(), app.GetMenuList)
+		jwtRouter.GET("/menu/list", app.GetMenuList)
 		//创建--菜单
-		//查看--菜单
+		// jwtRouter.POST("/menu", middleware.CheckPermission(), app.CreateMenu)
+		jwtRouter.POST("/menu", app.CreateMenu)
 		//更新--菜单
+		// jwtRouter.PUT("/menu", middleware.CheckPermission(), app.UpdateMenu)
+		jwtRouter.PUT("/menu", app.UpdateMenu)
 		//删除--菜单
+		// jwtRouter.DELETE("/menu/:id", middleware.CheckPermission(), app.DeleteMenu)
+		jwtRouter.DELETE("/menu/:id", app.DeleteMenu)
+
 
 		jwtRouter.POST("/image_upload", common.ImageUpload)
 		jwtRouter.POST("/logout", app.Logout)

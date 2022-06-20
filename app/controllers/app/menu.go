@@ -14,3 +14,15 @@ func GetMenuList(c *gin.Context) {
 	}
 	response.Success(c, menu)
 }
+
+func CreateMenu(c *gin.Context) {
+
+}
+
+func UpdateMenu(c *gin.Context) {
+	
+}
+
+func DeleteMenu(c *gin.Context) {
+	
+}
