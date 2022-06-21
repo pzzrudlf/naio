@@ -52,6 +52,7 @@ func SetApiGroupRoutes(router *gin.RouterGroup) {
 		//菜单--列表
 		// jwtRouter.GET("/menu/list", middleware.CheckPermission(), app.GetMenuList)
 		jwtRouter.GET("/menu/list", app.GetMenuList)
+		jwtRouter.GET("/menu/parent", app.GetMenuParent)
 		//创建--菜单
 		// jwtRouter.POST("/menu", middleware.CheckPermission(), app.CreateMenu)
 		jwtRouter.POST("/menu", app.CreateMenu)

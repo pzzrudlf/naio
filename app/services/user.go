@@ -37,7 +37,7 @@ func (userService *userService) Login(params request.Login) (user *models.User, 
 }
 
 // GetUserInfo 获取用户信息
-func (userService *userService) GetUserInfo(userId string) (userInfo params.AuthInfoDao, err error) {
+func (userService *userService) GetUserInfo(userId string) (userInfo params.AuthInfoVO, err error) {
 	intId, _ := strconv.Atoi(userId)
 	var permissions []models.Permission
 	global.App.DB.Raw("select code from permission where id in (select permission_id from role_permission where role_id = (select role_id from user_role where user_id = ?))", intId).Scan(&permissions)

@@ -15,6 +15,15 @@ func GetMenuList(c *gin.Context) {
 	response.Success(c, menu)
 }
 
+func GetMenuParent(c *gin.Context) {
+	menu, err := services.MenuService.GetMenuParent()
+	if err != nil {
+		response.BusinessFail(c, err.Error())
+		return
+	}
+	response.Success(c, menu)
+}
+
 func CreateMenu(c *gin.Context) {
 
 }
