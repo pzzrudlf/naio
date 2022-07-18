@@ -2,6 +2,7 @@ package services
 
 import (
 	"naio/app/common/params"
+	"naio/app/common/request"
 	"naio/app/models"
 	"naio/global"
 	"naio/utils"
@@ -79,4 +80,16 @@ func (menuService *menuService) GetMenuListByUserId(userId string) ([]*params.Au
 
 	data := utils.AuthTree(menuInfo, 0)
 	return data, nil
+}
+
+func (menuService *menuService) CreateMenu(params request.Menu) error {
+	return nil
+}
+
+func (menuService *menuService) UpdateMenu(params request.Menu) error {
+	return nil
+}
+
+func (menuService *menuService) DeleteMenu(menuId string) error {
+	return nil
 }

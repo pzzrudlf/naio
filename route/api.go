@@ -35,7 +35,6 @@ func SetApiGroupRoutes(router *gin.RouterGroup) {
 		jwtRouter.GET("/admin/getRoleIdByUserId", app.GetRoleIdByUserId)
 		jwtRouter.POST("/admin/assignRole", app.AssignRole)
 
-
 		//角色--列表
 		// jwtRouter.GET("/role/list", middleware.CheckPermission(), app.GetRoleList)
 		jwtRouter.GET("/role/list", app.GetRoleList)
@@ -63,8 +62,9 @@ func SetApiGroupRoutes(router *gin.RouterGroup) {
 		// jwtRouter.DELETE("/menu/:id", middleware.CheckPermission(), app.DeleteMenu)
 		jwtRouter.DELETE("/menu/:id", app.DeleteMenu)
 
-
+		//图片文件上传
 		jwtRouter.POST("/image_upload", common.ImageUpload)
+		//退出
 		jwtRouter.POST("/logout", app.Logout)
 	}
 }

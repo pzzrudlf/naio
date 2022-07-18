@@ -5,6 +5,9 @@ import (
 	"naio/global"
 )
 
+// @title api文档
+// @version 0.0.1
+// @BasePath /api
 func main() {
 	// 初始化配置
 	global.App.ConfigViper = bootstrap.InitializeConfig()
