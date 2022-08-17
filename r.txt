@@ -1,0 +1,125 @@
+package main
+
+import (
+	"fmt"
+	"sync"
+	"time"
+)
+
+/*
+sync.Mutex sync.RWMutex
+sync.Once
+sync.WaitGroup
+sync.Cond
+sync.Map
+sync.Pool
+*/
+
+type num struct {
+	i      int
+	lock   *sync.Mutex
+	group  *sync.WaitGroup
+	once   *sync.Once
+	rwLock *sync.RWMutex
+	cond   *sync.Cond
+}
+
+var (
+	key int
+)
+
+func main1() {
+	i := &num{
+		lock: &sync.Mutex{},
+	}
+
+	for k := 0; k < 10; k++ {
+		go func() {
+			i.lock.Lock()
+			i.i++
+			i.lock.Unlock()
+		}()
+	}
+
+	time.Sleep(1 * time.Second)
+	fmt.Println("i is ", i.i)
+}
+
+func main2() {
+	i := &num{
+		lock:  &sync.Mutex{},
+		group: &sync.WaitGroup{},
+	}
+	i.group.Add(10)
+	for k := 0; k < 10; k++ {
+		go func() {
+			i.lock.Lock()
+			i.i++
+			i.lock.Unlock()
+			i.group.Done()
+		}()
+	}
+	i.group.Wait()
+	//time.Sleep(1 * time.Second)
+	fmt.Println("i is ", i.i)
+}
+
+func main3() {
+	i := &num{
+		lock:  &sync.Mutex{},
+		group: &sync.WaitGroup{},
+		once:  &sync.Once{},
+	}
+	i.group.Add(10)
+	for k := 0; k < 10; k++ {
+		go func() {
+			i.lock.Lock()
+			i.i++
+			i.lock.Unlock()
+			i.group.Done()
+		}()
+	}
+	i.group.Wait()
+	//time.Sleep(1 * time.Second)
+	fmt.Println("i is ", i.i)
+
+	//单例模式
+	for {
+		i.once.Do(func() {
+			hello()
+		})
+		fmt.Println("key is ", key)
+		time.Sleep(1 * time.Second)
+	}
+
+}
+
+func hello() {
+	fmt.Println("he")
+}
+
+func main() {
+	i := &num{
+		lock:   &sync.Mutex{},
+		group:  &sync.WaitGroup{},
+		once:   &sync.Once{},
+		rwLock: &sync.RWMutex{},
+		cond:   &sync.Cond{},
+	}
+	i.group.Add(10)
+	for k := 0; k < 10; k++ {
+		go func() {
+			i.rwLock.Lock()
+			i.i++
+			i.rwLock.Unlock()
+			i.group.Done()
+		}()
+	}
+	// i.group.Wait()
+	//time.Sleep(1 * time.Second)
+	i.rwLock.RLock()
+	fmt.Println("i.i is ", i.i)
+	i.rwLock.Unlock()
+	i.group.Wait()
+	fmt.Println("i.i is ", i.i)
+}

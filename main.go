@@ -10,8 +10,8 @@ import (
 // @BasePath /api
 func main() {
 	// 初始化配置
-	global.App.ConfigViper = bootstrap.InitializeConfig()
-	//global.App.Config
+    //global.App.Config
+	bootstrap.InitializeConfig()
 
 	// 初始化日志
 	global.App.Log = bootstrap.InitializeLog()
